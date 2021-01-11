@@ -1,3 +1,4 @@
-function clicked() {
-    return "Clicked";
+function buttonClicked()
+{
+    alert("Clicked!");
 }

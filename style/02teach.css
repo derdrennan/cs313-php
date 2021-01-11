@@ -2,17 +2,17 @@ h1 {
     color: red;
 }
 
-.oranges {
-    font-size: 12px;
+.div-1 {
+    font-size: 18px;
     background-color: gray;
 }
 
-.apples {
-    font-size: 14px;
+.div-2 {
+    font-size: 18px;
     background-color: darkgray;
 }
 
-.strawberries {
-    font-size: 16px;
-    background-color: dimgray;
+.div-3 {
+    font-size: 18px;
+    background-color: gray;
 }
