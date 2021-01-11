@@ -1,3 +1,18 @@
 h1 {
     color: red;
 }
+
+.oranges {
+    font-size: 12px;
+    background-color: gray;
+}
+
+.apples {
+    font-size: 14px;
+    background-color: darkgray;
+}
+
+.strawberries {
+    font-size: 16px;
+    background-color: dimgray;
+}
