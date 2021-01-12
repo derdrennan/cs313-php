@@ -11,6 +11,6 @@ function changeColor()
     var div_id = "div1";
     var div = document.getElementById(div_id);
 
-    var color = textbox.nodeValue;
+    var color = textbox.value;
     div.style.backgroundColor = color;
 }
