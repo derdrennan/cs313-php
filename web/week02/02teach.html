@@ -9,8 +9,17 @@
 
     <script>
       $(document).ready(function(){
-        $("userChangesColor").click(function(){
-          $("div1").css("background-color", "txtColor")
+        $("userColor").click(function(){
+          $("div1").css("div1.background-color", "txtColor")
+        });
+      });
+
+      $(document).ready(function(){
+        $("div3").hover(function(){
+          $("div3").fadeIn("slow");
+        },
+        function(){
+          $("div3").fadeInOut();
         });
       });
     </script>
@@ -26,7 +35,7 @@
       <div id="div3" class="div-3 hover-bold">Division 3</div><br>
 
       <label for="txtColor">Color:</label> <input type="text" id="txtColor" placeholder="#cccccc"><br />
-      <button id="userChangesColor" onClick="changeColor()">Change Color</button><br><br>
+      <button id="userColor" onClick="changeColor()">Change Color</button><br><br>
 
       <button onclick="buttonClicked()">Click Me!</button>
 
