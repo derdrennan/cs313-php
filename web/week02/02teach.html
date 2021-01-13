@@ -10,7 +10,7 @@
     <script>
       $(document).ready(function(){
         $("#userColor").click(function(){
-          $("#div1").css("#div1.background-color", "#txtColor")
+          $("#div1").css("background-color", "#txtColor")
         });
       });
 
@@ -32,7 +32,8 @@
       <div id="div3" class="div-3 hover-bold">Division 3</div><br>
 
       <label for="txtColor">Color:</label> <input type="text" id="txtColor" placeholder="#cccccc"><br />
-      <button id="userColor" onClick="changeColor()">Change Color</button><br><br>
+      <!-- <button id="userColor" onClick="changeColor()">Change Color</button><br><br> -->
+      <button id="userColor">Change Color</button><br><br>
 
       <button onclick="buttonClicked()">Click Me!</button>
 
