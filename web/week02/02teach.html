@@ -4,6 +4,16 @@
     <title>02 Teach Individual Assignment</title>
     <link rel="stylesheet" type="text/css" href="..\week02\02teach.css">
     <script src="..\week02\02teach.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+        $("userChangesColor").click(function(){
+          $("div1").css("background-color", "txtColor")
+        })
+      });
+    </script>
+
   </head>
 
   <body>
@@ -14,7 +24,7 @@
     <div id="div3" class="div-3 hover-bold">Division 3</div><br>
 
     <label for="txtColor">Color:</label> <input type="text" id="txtColor" placeholder="#cccccc"><br />
-    <button onClick="changeColor()">Change Color</button><br><br>
+    <button id="userChangesColor" onClick="changeColor()">Change Color</button><br><br>
 
     <button onclick="buttonClicked()">Click Me!</button>
 
