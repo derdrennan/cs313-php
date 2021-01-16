@@ -18,12 +18,15 @@ body {
 }
 
 #typing {
-  border-radius: 50%;
+  width: 100%;
+  object-fit: cover;
+  height: 240px;
+  /* border-radius: 50%;
   size: 10%;
   width: 30%;
   height: auto; 
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; */
 }
 
 .name {
