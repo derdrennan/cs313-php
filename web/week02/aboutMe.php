@@ -43,7 +43,7 @@
       </section>
 
       <footer>
-        <?php include 'footer.php';?>
+        <?php auto_copyright("2019");?>
       </footer>
 
     </div>
