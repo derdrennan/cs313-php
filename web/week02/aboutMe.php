@@ -43,7 +43,7 @@
       </section>
 
       <footer>
-        <?php auto_copyright("2019");?>
+        © 2010-<?php echo date("Y");?>
       </footer>
 
     </div>
