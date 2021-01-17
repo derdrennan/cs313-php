@@ -52,3 +52,7 @@
    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
    margin: 1rem;
  }
+
+ .link-style {
+  text-decoration: none;
+}
