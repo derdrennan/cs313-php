@@ -5,7 +5,11 @@
   <p>Mailto: <?php echo $_POST["email"]; ?><br>
   <p>Major: <?php echo $_POST["major"]; ?><br>
   <p>Comment: <?php echo $_POST["userComments"]; ?><br>
-  <p>Continents visited: <?php echo $_POST["continents"]; ?><br>
+  
+  <p>Continents visited:</p>
+  <?php 
+    foreach($_POST["continents"] as $continent { echo $continent }
+  ?><br>
 
 </body>
 </html>

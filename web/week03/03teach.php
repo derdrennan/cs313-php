@@ -35,12 +35,25 @@
       <!-- Checkboxes -->
       <label for="continents">Continents visited:</label><br>
       <input type="checkbox" id="NA" name="continents" value="North America">
+      North America<br>
+
       <input type="checkbox" id="SA" name="continents" value="South America">
+      South America<br>
+
       <input type="checkbox" id="EU" name="continents" value="Europe">
+      Europe<br>
+
       <input type="checkbox" id="AS" name="continents" value="Asia">
+      Asia<br>
+
       <input type="checkbox" id="AU" name="continents" value="Australia">
+      Australia<br>
+
       <input type="checkbox" id="AF" name="continents" value="Africa">
+      Africa<br>
+      
       <input type="checkbox" id="AN" name="continents" value="Antarctica">
+      Antarctica<br>
 
       <!-- Submit Button -->
       <input type="submit">
