@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <form action="studentInfo.php" method="post">
+  <form action="..\week03\studentInfo.php" method="post">
       <!-- Text data -->
       <label for="name">Name:</label><br>
       <input type="text" id="name" name="name"><br>
