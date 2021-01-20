@@ -8,7 +8,7 @@
   
   <p>Continents visited:</p>
   <?php 
-    foreach($_POST["continents"] as $continent { echo $continent }
+    foreach($_POST["continents"] as $continent) { echo $continent; }
   ?><br>
 
 </body>
