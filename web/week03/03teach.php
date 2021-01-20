@@ -16,16 +16,16 @@
 
       <!-- Radio Buttons -->
       <label for="major">Major:</label><br>
-      <input type="radio" id="computerScience" name="major" value="computerScience">
+      <input type="radio" id="computerScience" name="major" value="Computer Science">
       <label for="computerScience">Computer Science</label><br>
 
-      <input type="radio" id="webDesign" name="major" value="webDesign">
+      <input type="radio" id="webDesign" name="major" value="Web Design">
       <label for="webDesign">Web Design and Development</label><br>
       
-      <input type="radio" id="CIT" name="major" value="CIT">
+      <input type="radio" id="CIT" name="major" value="Computer Information Technology">
       <label for="CIT">Computer Information Technology</label><br>
 
-      <input type="radio" id="CE" name="major" value="CE">
+      <input type="radio" id="CE" name="major" value="Computer Engineering">
       <label for="CE">Computer Engineering</label><br><br>
 
       <!-- Comment box -->
