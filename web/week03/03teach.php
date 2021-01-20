@@ -30,11 +30,11 @@
 
       <!-- Comment box -->
       <label for="userComments">Comments:</label><br>
-      <textarea rows="5" cols="50" id="userComments" name="userComments"></textarea><br><br>
-  </form>
+      <textarea rows="5" cols="50" id="userComments" name="userComments"></textarea><br>
 
-  <p>Hello <?php echo $_POST["name"]; ?><br>
-  
+      <!-- Submit Button -->
+      <input type="submit">
+  </form>
 
 </body>
 
