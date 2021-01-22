@@ -33,7 +33,6 @@
           }
       }
     
-    ?>
     <!-- <div class="assignment-style">
         Base Set
         <img src="..\week03\pokemonPics\base-set.jpg" alt="Base Set" width="200" height="278">
