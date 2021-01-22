@@ -15,6 +15,12 @@
       Pokemon Card Store
   </header>
 
+  <?php 
+    require_once ("..\week03\product.php");
+    $product = new Product();
+    $productArray = $product->getAllProduct();
+  ?>
+
   <!-- Store Items -->
   <div id="card-container">
   <section class="basic-grid">
