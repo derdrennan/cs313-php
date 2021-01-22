@@ -84,13 +84,6 @@
  </section>
 </div>
 
-<?php
-  //Set session variables
-  $_SESSION["cartTotal"] = "$0.00";
-  "Cart Total is: " print_r($_SESSION['cartTotal']);
-?>
-  
-
 <footer id="footer">
   <p>All cards have been certified by PSA Authentication and grading services.</p>
 </footer>
