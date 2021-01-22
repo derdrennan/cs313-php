@@ -87,7 +87,7 @@
 <?php
   //Set session variables
   $_SESSION["cartTotal"] = "$0.00";
-  echo "Cart Total is: " print_r($_SESSION['cartTotal']);
+  "Cart Total is: " print_r($_SESSION['cartTotal']);
 ?>
   
 
