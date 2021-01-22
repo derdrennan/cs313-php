@@ -19,11 +19,21 @@
   <div id="card-container">
   <section class="basic-grid">
     <div class="assignment-style">
+    <?php 
+      if (! empty($productArray)) {
+          foreach ($productArray as $k => $v) {
+            ?>
+             <?php echo $productArray[$k]["name"]; ?>
+          }
+      }
+    
+    ?>
+    <!-- <div class="assignment-style">
         Base Set
         <img src="..\week03\pokemonPics\base-set.jpg" alt="Base Set" width="200" height="278">
         <div class="add-to-cart">
             $437
-            <input class="quantity" type="number" id="base" name="base" value="437" min="0" max="5" placeholder="0">
+            <input class="quantity" type="number" id="base" name="base" min="0" max="5" placeholder="0">
             <button type="button" class="small-text">Add to Cart</button>
         </div>
     </div>
@@ -80,7 +90,7 @@
             <input class="quantity" type="number" id="XY" name="XY" value="768" min="0" max="5" placeholder="0">
             <button type="button" class="small-text">Add to Cart</button>
         </div>
-    </div>
+    </div> -->
  </section>
 </div>
 
