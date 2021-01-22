@@ -84,11 +84,7 @@
  </section>
 </div>
 
-<?php
-  //Set session variables
-  $_SESSION["cartTotal"] = "$0.00";
-  echo "Cart Total is: " $_SESSION["cartTotal"] . ".";
-?>
+
   
 
 <footer id="footer">
