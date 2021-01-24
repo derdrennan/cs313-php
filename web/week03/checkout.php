@@ -35,7 +35,7 @@ session_start();
   <div id="page-container">
 
     <div class="topnav">
-      <a href="">Home</a>
+      <a class="active" href="../week02/assignmentLinks.html">Home</a>
       <a href="../week03/browse.php">Browse Store</a>
       <a href="../week03/viewCart.php">View Cart</a>
     </div>

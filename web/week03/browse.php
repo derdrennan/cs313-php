@@ -36,7 +36,7 @@ $productArray = $product->getAllProduct();
   <div id="page-container">
 
     <div class="topnav">
-      <a class="active" href="#home">Home</a>
+      <a class="active" href="../week02/assignmentLinks.html">Home</a>
       <a href="../week03/viewCart.php">View Cart</a>
     </div>
 

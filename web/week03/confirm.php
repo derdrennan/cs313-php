@@ -27,7 +27,7 @@ $productArray = $product->getAllProduct();
 <body>
   <div id="page-container">
     <div>
-      <a href="#home">Home</a>
+      <a class="active" href="../week02/assignmentLinks.html">Home</a>
       <a href="../week03/browse.php">Browse Store</a>
       <a href="../week03/viewCart.php">View Cart</a>
     </div><br>
