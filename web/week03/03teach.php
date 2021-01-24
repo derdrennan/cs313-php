@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <title>03 Teach</title>
-    <link rel="stylesheet" type="text/css" href="..\week03\practice.css">
+    <link rel="stylesheet" type="text/css" href="../week03/practice.css">
 </head>
 
 <body>
-  <form action="..\week03\studentInfo.php" method="post">
+  <form action="../week03/studentInfo.php" method="post">
       <!-- Text data -->
       <label for="name">Name:</label><br>
       <input type="text" id="name" name="name"><br>

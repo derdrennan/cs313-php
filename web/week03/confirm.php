@@ -8,7 +8,7 @@ foreach ($_SESSION["address"] as $k => $v) {
 }
 //var_dump($_SESSION["address"]);
 
-require_once("..\week03\product.php");
+require_once("../week03/product.php");
 $product = new Product();
 $productArray = $product->getAllProduct();
 //var_dump($productArray);
@@ -21,15 +21,15 @@ $productArray = $product->getAllProduct();
 <head>
   <meta charset="UTF-8" />
   <title>03 Prove Checkout</title>
-  <link rel="stylesheet" type="text/css" href="..\week03\03prove.css">
+  <link rel="stylesheet" type="text/css" href="../week03/03prove.css">
 </head>
 
 <body>
   <div id="page-container">
     <div>
       <a href="#home">Home</a>
-      <a href="..\week03\browse.php">Browse Store</a>
-      <a href="..\week03\viewCart.php">View Cart</a>
+      <a href="../week03/browse.php">Browse Store</a>
+      <a href="../week03/viewCart.php">View Cart</a>
     </div><br>
 
     <header>
