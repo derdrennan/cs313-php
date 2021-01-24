@@ -5,54 +5,47 @@ class Product
 
     public $productArray = array(
         "base" => array(
-            'id' => 'base',
+            'id' => '1',
             'name' => 'Base Set',
-            'code' => 'base',
             'image' => '..\week03\pokemonPics\base-set.jpg',
             'price' => '437.00'
         ),
         "blastoise" => array(
-            'id' => 'blastoise',
+            'id' => '2',
             'name' => 'Blastoise',
-            'code' => 'blastoise',
             'image' => '..\week03\pokemonPics\blastoise.jpg',
             'price' => '457.00'
         ),
         "charizard" => array(
-            'id' => 'charizard',
+            'id' => '3',
             'name' => 'Charizard',
-            'code' => 'charizard',
             'image' => '..\week03\pokemonPics\charizard.jpg',
             'price' => '1,750.00'
-        )
+        ),
         "fossil" => array(
-            'id' => 'fossil',
+            'id' => '4',
             'name' => 'Fossil Set',
-            'code' => 'fossil',
             'image' => '..\week03\pokemonPics\fossil-set.jpg',
             'price' => '219.00'
-        )
+        ),
         "mew" => array(
-            'id' => 'mew',
+            'id' => '5',
             'name' => 'Mew',
-            'code' => 'mew',
             'image' => '..\week03\pokemonPics\mew.jpg',
             'price' => '199.00'
-        )
+        ),
         "venusaur" => array(
-            'id' => 'venusaur',
+            'id' => '6',
             'name' => 'Venusaur',
-            'code' => 'venusaur',
             'image' => '..\week03\pokemonPics\venusaur.jpg',
             'price' => '187.00'
-        )
+        ),
         "XY" => array(
-            'id' => 'XY',
+            'id' => '7',
             'name' => 'XY Booster',
-            'code' => 'XY',
             'image' => '..\week03\pokemonPics\xy-booster.jpg',
             'price' => '768.00'
-        )
+        ),
     );
 
     public function getAllProduct()

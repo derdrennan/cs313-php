@@ -28,9 +28,8 @@
         for ($row = 0; $row < studentsMajor.count(); $row++) {
           for ($col = 0; $col < 1; $col++){
             <input type ="radio" id="studentsMajor[row]" name="major"
-            <?php if (isset($major) && $major=="studentsMajor[row]") echo "checked";?>
+             if (isset($major) && $major=="studentsMajor[row]") echo "checked";?>
             value="studentsMajor[row][col]">
-            
           }
         }
       ?>
