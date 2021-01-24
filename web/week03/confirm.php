@@ -32,12 +32,12 @@ $productArray = $product->getAllProduct();
       <a href="../week03/viewCart.php">View Cart</a>
     </div><br>
 
-    <header>
+    <header id="header">
       Confirmation Page
     </header><br>
 
     <!-- Store Items -->
-    <div>
+    <div style="color: white; margin: 8px;">
       Name: <?php echo $_SESSION["address"]["fname"] . " " . $_SESSION["address"]["lname"] ?><br>
       Address: <?php echo $_SESSION["address"]["address"] ?><br>
       City/State: <?php echo $_SESSION["address"]["city"] . ", " . $_SESSION["address"]["state"] ?><br><br>
@@ -56,12 +56,15 @@ $productArray = $product->getAllProduct();
       }
       ?><br>
 
-      <div>
+      <div style="color: white; margin: 8px;">
         Your order was submitted.
       </div>
 
     </div>
 
+    <footer id="footer">
+      <p>All cards have been certified by PSA Authentication and grading services.</p>
+    </footer>
   </div>
 </body>
 
