@@ -12,7 +12,7 @@ session_start();
 
   <script>
     function cartActions(action, ID) {
-      fetch("../week03basic/addToCart.php", {
+      fetch("../week03/addToCart.php", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ session_start();
 
     <!-- Store Items -->
     <div style="color: white; margin: 8px;">
-      <form action="..\week03basic\confirm.php">
+      <form action="..\week03\confirm.php">
         <label>First Name</label>
         <input type="text" name="fname"><br>
         <label>Last Name</label>
