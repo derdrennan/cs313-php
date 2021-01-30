@@ -1,6 +1,6 @@
 CREATE TABLE public.user (
   id SERIAL NOT NULL PRIMARY KEY,
-  username VARCHAR(100) NOT NULL,
+  username VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE public.recipeList (
@@ -11,7 +11,7 @@ CREATE TABLE public.recipeList (
 
 CREATE TABLE public.recipeInfo (
   id SERIAL NOT NULL PRIMARY KEY,
-  url VARCHAR(400) NOT NOT NULL,
+  url VARCHAR(400) NOT NULL,
   userComment VARCHAR(500) NOT NULL,
   category VARCHAR(30) NOT NULL,
   cookTime VARCHAR(50) NOT NULL,
