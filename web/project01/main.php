@@ -5,9 +5,8 @@
 <head>
   <meta charset="utf-8">
   <title>Project 01: Recipe Sharing</title>
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-  <?php include('../connections.php')
-  ?>
+  <link rel="stylesheet" type="text/css" href="../project01/styles.css">
+  <?php include('../connections.php') ?>
 
 </head>
 
@@ -24,11 +23,20 @@
   <div>Click a name to see their favorite recipes!</div><br>
   <button>Add New Member</button>
 
-  <?php
-  foreach ($db->query('SELECT username FROM public.user') as $row) {
-    echo 'username: ' . $row['username'];
-  }
-  ?>
+  <div id="card-container">
+    <section class="basic-grid">
+      <?php
+      foreach ($db->query('SELECT username FROM public.user') as $row) {
+      ?>
+        <div class="assignment-style">
+          <?php echo $row['username']; ?>
+        </div>
+      <?php
+      }
+      ?>
+
+    </section>
+  </div>
 
 </body>
 
