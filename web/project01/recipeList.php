@@ -18,6 +18,15 @@
   </ul>
 
   <div><?php echo $_GET['subject'] ?>s' favorite Recipes!</div><br>
+
+  <div>
+    <?php $statement = $db->query('SELECT username FROM public.user WHERE id = subject');
+    while ($row = $statment->fetch(PDO::FETCH_ASSOC)) {
+      echo $row['username'];
+    } ?>
+    's favorite recipes!
+  </div>
+
   <div>Click a recipe!</div><br>
 
 </body>
