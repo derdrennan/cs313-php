@@ -10,14 +10,14 @@
 
 </head>
 
-<body>
+<body style="background: white;">
 
   <ul>
     <li><a href="../week02/assignmentLinks.html">Home</a></li>
     <li><a href="../project01/main.php">List of Users</a></li>
   </ul>
 
-  <div><?php echo $_GET['username'] ?>s' favorite Recipes!</div><br>
+  <div><?php echo $_GET['subject'] ?>s' favorite Recipes!</div><br>
   <div>Click a recipe!</div><br>
 
 </body>
