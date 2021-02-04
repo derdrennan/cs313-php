@@ -26,11 +26,11 @@
   <div id="card-container">
     <section class="basic-grid">
       <?php
-      foreach ($db->query('SELECT username FROM public.user') as $row) {
+      foreach ($db->query('SELECT id, username FROM public.user') as $row) {
       ?>
-        <div class="assignment-style">
+        <a href="../project01/recipeList.php?subject=<?php echo $row['username'] ?>" class="assignment-style">
           <?php echo $row['username']; ?>
-        </div>
+        </a>
       <?php
       }
       ?>
