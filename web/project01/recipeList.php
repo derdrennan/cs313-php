@@ -20,9 +20,8 @@
   <div><?php echo $_GET['user'] ?>s' favorite Recipes!</div><br>
 
   <div>
+    <!-- Getting the user name -->
     <?php
-    /* Execute a prepared statement by passing an array of values */
-    /* https://www.php.net/manual/en/pdo.prepare.php */
     $userID = $_GET['user'];
     $statement =  $db->prepare('SELECT username
         FROM public.user
@@ -31,16 +30,31 @@
     $statement->bindValue(':id', $userID, PDO::PARAM_INT);
     $statement->execute();
 
-    //$statement = $dbh->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
-    //$sth->execute(array(':id' => $_GET['user']));
-    //$name = $sth->fetch();
-    //echo "Testing name: " . $statement;
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
       $userName = $row['username'];
       echo "Testing name in while loop: " . $userName;
     }
-
     ?>
+  </div>
+
+  <div>
+    <!-- Getting list of recipes -->
+    <?php
+    $userID = $_GET['user'];
+    $statement =  $db->prepare('SELECT *
+        FROM public.recipeList
+        WHERE user_id = :user_id');
+
+    $statement->bindValue(':user_id', $userID, PDO::PARAM_INT);
+    $statement->execute();
+
+    while ($row = $statement->fetchAll(PDO::FETCH_ASSOC)) {
+      $recipe = $row['recipeTitle'];
+      echo "Testing recipe list loop: " . $recipe;
+    }
+    ?>
+
+
   </div>
 
   <div>Click a recipe!</div><br>
