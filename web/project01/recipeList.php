@@ -29,6 +29,8 @@
   $sth->execute(array(':id' => $_GET['subject']));
   $name = $sth->fetch();
   ?>
+
+
   <div>
     Testing name:
     <?php echo $name ?>
