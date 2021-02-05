@@ -48,7 +48,7 @@
     $statement->bindValue(':user_id', $userID, PDO::PARAM_INT);
     $statement->execute();
 
-    while ($row = $statement->fetchAll(PDO::FETCH_ASSOC)) {
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
       $recipe = $row['recipeTitle'];
       echo "Testing recipe list loop: " . $recipe;
     }
