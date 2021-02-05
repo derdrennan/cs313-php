@@ -53,6 +53,7 @@
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
       $recipeTitle = $row['recipeTitle'];
       echo "Testing recipe list loop: " . $recipeTitle;
+      echo "Testing the row variable: " . $row;
     }
     ?>
 
