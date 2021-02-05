@@ -45,7 +45,7 @@
         FROM public.recipeList
         WHERE user_id = :user_id');
 
-    $statement->bindValue(':user_id', $userID, PDO::PARAM_INT);
+    $statement->bindValue(':user_id', $userID);
     $statement->execute();
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
