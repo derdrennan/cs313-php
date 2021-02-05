@@ -41,6 +41,7 @@
     <!-- Getting list of recipes -->
     <?php
     $userID = $_GET['user'];
+    echo "User id = " . $userID;
     $statement =  $db->prepare('SELECT recipeTitle
         FROM public.recipeList
         WHERE user_id = :user_id');
@@ -52,8 +53,8 @@
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
       $recipeTitle = $row['recipeTitle'];
-      echo "Testing recipe list loop: " . $recipeTitle;
-      var_dump($recipeTitle);
+      //echo "Testing recipe list loop: " . $recipeTitle;
+      var_dump($row);
     }
     ?>
 
