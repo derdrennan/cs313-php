@@ -34,7 +34,12 @@
     //$statement = $dbh->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
     //$sth->execute(array(':id' => $_GET['user']));
     //$name = $sth->fetch();
-    echo "Testing name: " . $statement;
+    //echo "Testing name: " . $statement;
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+      $userName = $row['username'];
+      echo "Testing name in while loop: " . $userName;
+    }
+
     ?>
   </div>
 
