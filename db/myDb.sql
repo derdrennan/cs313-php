@@ -5,7 +5,7 @@ CREATE TABLE public.user (
 
 CREATE TABLE public.recipeList (
   id SERIAL NOT NULL PRIMARY KEY,
-  recipeTitle VARCHAR(100) NOT NULL,
+  recipetitle VARCHAR(100) NOT NULL,
   user_id INT NOT NULL REFERENCES public.user(id)
 );
 

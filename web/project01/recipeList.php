@@ -52,9 +52,8 @@
     echo "Testing userID: " . $userID;
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      $recipeTitle = $row['recipeTitle'];
-      //echo "Testing recipe list loop: " . $recipeTitle;
-      var_dump($row);
+      $recipeTitle = $row['recipetitle'];
+      echo "Testing recipe title: " . $recipeTitle;
     }
     ?>
 
