@@ -28,7 +28,7 @@
       <?php
       foreach ($db->query('SELECT id, username FROM public.user') as $row) {
       ?>
-        <a href="../project01/recipeList.php?subject=<?php echo $row['id'] ?>" class="assignment-style link-style">
+        <a href="../project01/recipeList.php?user=<?php echo $row['id'] ?>" class="assignment-style link-style">
           <?php echo $row['username']; ?>
         </a>
       <?php
