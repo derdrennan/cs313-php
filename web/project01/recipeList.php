@@ -19,13 +19,21 @@
 
   <div><?php echo $_GET['subject'] ?>s' favorite Recipes!</div><br>
 
+  <?php
+  /* Execute a prepared statement by passing an array of values */
+  /* https://www.php.net/manual/en/pdo.prepare.php */
+  $sql = 'SELECT username
+        FROM public.user
+        WHERE id < :id LIMIT 1';
+  $sth = $dbh->prepare($sql, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
+  $sth->execute(array(':id' => $_GET['subject']));
+  $name = $sth->fetch();
+  ?>
   <div>
-    <?php $statement = $db->query('SELECT username FROM public.user WHERE id = subject');
-    while ($row = $statment->fetch(PDO::FETCH_ASSOC)) {
-      echo $row['username'];
-    } ?>
-    's favorite recipes!
+    Testing name:
+    <?php echo $name ?>
   </div>
+
 
   <div>Click a recipe!</div><br>
 
