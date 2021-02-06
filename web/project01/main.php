@@ -18,7 +18,7 @@
       <a href="../week02/assignmentLinks.html">Home</a>
     </div>
 
-    <h1 id="header-1">Family Recipe Sharing</h1>
+    <h1 id="header-1">Family Recipe Sharing</h1><br>
 
     <div id="wrapper">
       <div id="intro">

@@ -6,22 +6,40 @@
   <meta charset="utf-8">
   <title>Project 01: Recipe Info</title>
   <link rel="stylesheet" type="text/css" href="../project01/styles.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bubblegum+Sans" />
   <?php include('../connections.php') ?>
-
 </head>
 
-<body class="page-container" style="background: white;">
+<body>
 
-  <ul>
-    <li><a href="../week02/assignmentLinks.html">Home</a></li>
-    <li><a href="../project01/main.php">List of Users</a></li>
-  </ul>
+  <div id="page-container">
+    <div class="topnav">
+      <a href="../week02/assignmentLinks.html">Home</a>
+      <a href="../project01/main.php">List of Users</a>
+    </div>
 
-  <div class="main-div">
-    <div>Recipe Info Page</div><br>
     <!-- Get Recipe Title -->
+    <?php
+    $recipeID = $_GET['recipeID'];
+    $statement =  $db->prepare('SELECT recipeTitle
+        FROM public.recipeList
+        WHERE recipeList_id = :recipeList_id');
 
-    <div>
+    $statement->bindValue(':recipeList_id', $recipeID);
+    $statement->execute();
+
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+      $recipeTitle = $row['recipetitle'];
+      $id = $row['id'];
+    ?>
+      <h1 id="header-1">
+        <?php echo $recipeTitle; ?>
+      </h1>
+    <?php
+    }
+    ?>
+
+    <div id="wrapper">
       <!-- Getting Recipe Info -->
       <?php
       $recipeID = $_GET['recipeID'];
@@ -40,18 +58,51 @@
         $category = $row['category'];
         $cookTime = $row['cooktime'];
         $difficulty = $row['difficulty'];
-        echo $url;
-        echo "<br>";
-        echo $userComment;
-        echo "<br>";
-        echo $category;
-        echo "<br>";
-        echo $cookTime;
-        echo "<br>";
-        echo $difficulty;
+      ?>
+
+        <div id="card-container">
+          <section class="basic-grid">
+            <div class="assignment-style">
+              <?php echo $category ?>
+            </div>
+            <div class="assignment-style">
+              <?php echo $cookTime ?>
+            </div>
+            <div class="assignment-style">
+              <?php echo $difficulty ?>
+            </div>
+          </section>
+        </div>
+
+        <div id="card-container">
+          <section class="basic-grid">
+            <div class="assignment-style">
+              <?php echo $url ?>
+            </div>
+          </section>
+        </div>
+
+        <div id="card-container">
+          <section class="basic-grid">
+            <div class="assignment-style">
+              Special Instructions:
+            </div>
+          </section>
+        </div><br>
+
+        <div id="intro">
+          <?php echo $userComment ?>
+        </div>
+      <?php
       }
       ?>
     </div>
+  </div>
+
+  <footer id="footer">
+    <p>Thanks for visiting!</p>
+  </footer>
+
   </div>
 
 </body>

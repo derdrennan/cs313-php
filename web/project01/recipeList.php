@@ -33,7 +33,7 @@
         echo $userName . "'s favorite recipes!";
       }
       ?>
-    </h1>
+    </h1><br>
 
     <div id="wrapper">
       <!-- Getting list of recipes -->
