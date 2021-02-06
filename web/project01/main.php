@@ -10,7 +10,7 @@
 
 </head>
 
-<body class="page-container">
+<body>
 
   <ul>
     <li><a href="../week02/assignmentLinks.html">Home</a></li>
