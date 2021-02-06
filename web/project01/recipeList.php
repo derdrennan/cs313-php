@@ -6,20 +6,19 @@
   <meta charset="utf-8">
   <title>Project 01: Recipe List</title>
   <link rel="stylesheet" type="text/css" href="../project01/styles.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bubblegum+Sans" />
   <?php include('../connections.php') ?>
-
 </head>
 
-<body style="background: white;">
+<body>
+  <div id="page-container">
+    <div class="topnav">
+      <a href="../week02/assignmentLinks.html">Home</a>
+      <a href="../project01/main.php">List of Users</a>
+    </div>
 
-  <ul>
-    <li><a href="../week02/assignmentLinks.html">Home</a></li>
-    <li><a href="../project01/main.php">List of Users</a></li>
-  </ul>
-
-  <div class="main-div">
     <!-- Getting the user name -->
-    <div>
+    <h1 id="header-1">
       <?php
       $userID = $_GET['user'];
       $statement =  $db->prepare('SELECT username
@@ -34,37 +33,40 @@
         echo $userName . "'s favorite recipes!";
       }
       ?>
-    </div><br>
+    </h1>
 
-    <div>Click a recipe!</div><br>
-
-    <!-- Getting list of recipes -->
-    <div id="card-container">
-      <section class="basic-grid">
-        <?php
-        $userID = $_GET['user'];
-        $statement =  $db->prepare('SELECT recipeTitle, id
+    <div id="wrapper">
+      <!-- Getting list of recipes -->
+      <div id="card-container">
+        <section class="basic-grid">
+          <?php
+          $userID = $_GET['user'];
+          $statement =  $db->prepare('SELECT recipeTitle, id
         FROM public.recipeList
         WHERE user_id = :user_id');
 
-        $statement->bindValue(':user_id', $userID);
-        $statement->execute();
+          $statement->bindValue(':user_id', $userID);
+          $statement->execute();
 
-        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-          //For some reason, this query didn't work with a camel case spelling of 'recipeTitle'
-          //even though that's how I created the row in that table. 
-          $recipeTitle = $row['recipetitle'];
-          $id = $row['id'];
-        ?>
-          <a href="../project01/recipe.php?recipeID=<?php echo $id ?>" class="assignment-style link-style">
-            <?php echo $recipeTitle; ?>
-          </a>
-        <?php
-        }
-        ?>
-      </section>
+          while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            //For some reason, this query didn't work with a camel case spelling of 'recipeTitle'
+            //even though that's how I created the row in that table. 
+            $recipeTitle = $row['recipetitle'];
+            $id = $row['id'];
+          ?>
+            <a href="../project01/recipe.php?recipeID=<?php echo $id ?>" class="assignment-style link-style">
+              <?php echo $recipeTitle; ?>
+            </a>
+          <?php
+          }
+          ?>
+        </section>
+      </div>
+
+      <footer id="footer">
+        <p>Thanks for visiting!</p>
+      </footer>
     </div>
-  </div>
 
 </body>
 
