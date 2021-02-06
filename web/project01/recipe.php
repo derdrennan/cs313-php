@@ -36,14 +36,18 @@
       //For some reason, this query didn't work with a camel case spelling of 'recipeTitle'
       //even though that's how I created the row in that table. 
       $url = $row['url'];
-      $userComment = $row['userComment'];
+      $userComment = $row['usercomment'];
       $category = $row['category'];
-      $cookTime = $row['cookTime'];
+      $cookTime = $row['cooktime'];
       $difficulty = $row['difficulty'];
       echo $url;
+      echo "<br>";
       echo $userComment;
+      echo "<br>";
       echo $category;
+      echo "<br>";
       echo $cookTime;
+      echo "<br>";
       echo $difficulty;
     }
     ?>
