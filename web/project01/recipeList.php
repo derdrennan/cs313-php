@@ -53,6 +53,7 @@
         //For some reason, this query didn't work with a camel case spelling of 'recipeTitle'
         //even though that's how I created the row in that table. 
         $recipeTitle = $row['recipetitle'];
+        $id = $row['id'];
       ?>
         <a href="../project01/recipe.php?user=<?php echo $row['id'] ?>" class="assignment-style link-style">
           <?php echo $recipeTitle; ?>
