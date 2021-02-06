@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Project 01: Recipe Sharing</title>
+  <title>Project 01: Recipe List</title>
   <link rel="stylesheet" type="text/css" href="../project01/styles.css">
   <?php include('../connections.php') ?>
 
@@ -17,10 +17,8 @@
     <li><a href="../project01/main.php">List of Users</a></li>
   </ul>
 
-  <div><?php echo $_GET['user'] ?>s' favorite Recipes!</div><br>
-
+  <!-- Getting the user name -->
   <div>
-    <!-- Getting the user name -->
     <?php
     $userID = $_GET['user'];
     $statement =  $db->prepare('SELECT username
@@ -32,16 +30,15 @@
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
       $userName = $row['username'];
-      echo "Testing name in while loop: " . $userName;
+      echo $userName . "'s favorite recipes!";
     }
     ?>
   </div>
 
+  <!-- Getting list of recipes -->
   <div>
-    <!-- Getting list of recipes -->
     <?php
     $userID = $_GET['user'];
-    echo "User id = " . $userID;
     $statement =  $db->prepare('SELECT recipeTitle
         FROM public.recipeList
         WHERE user_id = :user_id');
@@ -49,14 +46,13 @@
     $statement->bindValue(':user_id', $userID);
     $statement->execute();
 
-    echo "Testing userID: " . $userID;
-
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+      //For some reason, this query didn't work with a camel case spelling of 'recipeTitle'
+      //even though that's how I created the row in that table. 
       $recipeTitle = $row['recipetitle'];
       echo "Testing recipe title: " . $recipeTitle;
     }
     ?>
-
 
   </div>
 
