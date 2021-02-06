@@ -62,11 +62,12 @@
           ?>
         </section>
       </div>
-
-      <footer id="footer">
-        <p>Thanks for visiting!</p>
-      </footer>
     </div>
+
+    <footer id="footer">
+      <p>Thanks for visiting!</p>
+    </footer>
+  </div>
 
 </body>
 
