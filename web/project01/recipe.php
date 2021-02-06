@@ -17,40 +17,41 @@
     <li><a href="../project01/main.php">List of Users</a></li>
   </ul>
 
+  <div class="main-div">
+    <div>Recipe Info Page</div><br>
+    <!-- Get Recipe Title -->
 
-  <div>Recipe Info Page</div><br>
-  <!-- Get Recipe Title -->
-
-  <div>
-    <!-- Getting Recipe Info -->
-    <?php
-    $recipeID = $_GET['recipeID'];
-    $statement =  $db->prepare('SELECT *
+    <div>
+      <!-- Getting Recipe Info -->
+      <?php
+      $recipeID = $_GET['recipeID'];
+      $statement =  $db->prepare('SELECT *
         FROM public.recipeInfo
         WHERE recipeList_id = :recipeList_id');
 
-    $statement->bindValue(':recipeList_id', $recipeID);
-    $statement->execute();
+      $statement->bindValue(':recipeList_id', $recipeID);
+      $statement->execute();
 
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      //For some reason, this query didn't work with camel case punctuation of 'recipeTitle'
-      //even though that's how I created the row in that table. 
-      $url = $row['url'];
-      $userComment = $row['usercomment'];
-      $category = $row['category'];
-      $cookTime = $row['cooktime'];
-      $difficulty = $row['difficulty'];
-      echo $url;
-      echo "<br>";
-      echo $userComment;
-      echo "<br>";
-      echo $category;
-      echo "<br>";
-      echo $cookTime;
-      echo "<br>";
-      echo $difficulty;
-    }
-    ?>
+      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+        //For some reason, this query didn't work with camel case punctuation of 'recipeTitle'
+        //even though that's how I created the row in that table. 
+        $url = $row['url'];
+        $userComment = $row['usercomment'];
+        $category = $row['category'];
+        $cookTime = $row['cooktime'];
+        $difficulty = $row['difficulty'];
+        echo $url;
+        echo "<br>";
+        echo $userComment;
+        echo "<br>";
+        echo $category;
+        echo "<br>";
+        echo $cookTime;
+        echo "<br>";
+        echo $difficulty;
+      }
+      ?>
+    </div>
   </div>
 
 </body>

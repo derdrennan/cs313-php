@@ -38,6 +38,10 @@ body {
   text-align: left;
 }
 
+.main-div {
+  max-width: 960px;
+}
+
 #add-to-cart {
   font-size: 1rem;
   margin: 8px 0px 0px 0px;
@@ -48,7 +52,6 @@ body {
 #page-container {
   position: relative;
   min-height: 100vh;
-  max-width: 960px;
 }
 
 #header {

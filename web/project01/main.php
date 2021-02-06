@@ -19,23 +19,25 @@
     <li><a href="#about">About</a></li>
   </ul>
 
-  <div>Family Recipe Sharing</div><br>
-  <div>Click a name to see their favorite recipes!</div><br>
-  <button>Add New Member</button>
+  <div class="main-div">
+    <div>Family Recipe Sharing</div><br>
+    <div>Click a name to see their favorite recipes!</div><br>
+    <button>Add New Member</button>
 
-  <div id="card-container">
-    <section class="basic-grid">
-      <?php
-      foreach ($db->query('SELECT id, username FROM public.user') as $row) {
-      ?>
-        <a href="../project01/recipeList.php?user=<?php echo $row['id'] ?>" class="assignment-style link-style">
-          <?php echo $row['username']; ?>
-        </a>
-      <?php
-      }
-      ?>
+    <div id="card-container">
+      <section class="basic-grid">
+        <?php
+        foreach ($db->query('SELECT id, username FROM public.user') as $row) {
+        ?>
+          <a href="../project01/recipeList.php?user=<?php echo $row['id'] ?>" class="assignment-style link-style">
+            <?php echo $row['username']; ?>
+          </a>
+        <?php
+        }
+        ?>
 
-    </section>
+      </section>
+    </div>
   </div>
 
 </body>
