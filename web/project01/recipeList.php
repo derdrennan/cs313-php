@@ -55,7 +55,7 @@
         $recipeTitle = $row['recipetitle'];
         $id = $row['id'];
       ?>
-        <a href="../project01/recipe.php?user=<?php echo $row['id'] ?>" class="assignment-style link-style">
+        <a href="../project01/recipe.php?user=<?php echo $id ?>" class="assignment-style link-style">
           <?php echo $recipeTitle; ?>
         </a>
       <?php

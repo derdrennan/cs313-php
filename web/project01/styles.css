@@ -111,3 +111,7 @@ button {
   background-color: #181818;
   color: white;
 }
+
+.link-style {
+  text-decoration: none;
+}
