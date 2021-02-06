@@ -39,6 +39,7 @@ body {
 }
 
 .main-div {
+  width: 100%;
   max-width: 960px;
 }
 
