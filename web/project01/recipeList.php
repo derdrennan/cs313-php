@@ -42,7 +42,7 @@
     <section class="basic-grid">
       <?php
       $userID = $_GET['user'];
-      $statement =  $db->prepare('SELECT recipeTitle
+      $statement =  $db->prepare('SELECT recipeTitle, id
         FROM public.recipeList
         WHERE user_id = :user_id');
 
