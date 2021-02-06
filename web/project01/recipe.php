@@ -23,14 +23,13 @@
     $recipeID = $_GET['recipeID'];
     $statement =  $db->prepare('SELECT recipeTitle
         FROM public.recipeList
-        WHERE recipeList_id = :recipeList_id');
+        WHERE id = :id');
 
-    $statement->bindValue(':recipeList_id', $recipeID);
+    $statement->bindValue(':id', $recipeID);
     $statement->execute();
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
       $recipeTitle = $row['recipetitle'];
-      $id = $row['id'];
     ?>
       <h1 id="header-1">
         <?php echo $recipeTitle; ?>
