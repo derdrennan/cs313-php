@@ -33,30 +33,31 @@
       echo $userName . "'s favorite recipes!";
     }
     ?>
-  </div>
+  </div><br>
+
+  <div>Click a recipe!</div><br>
 
   <!-- Getting list of recipes -->
-  <div>
-    <?php
-    $userID = $_GET['user'];
-    $statement =  $db->prepare('SELECT recipeTitle
+  <div id="card-container">
+    <section class="basic-grid">
+      <?php
+      $userID = $_GET['user'];
+      $statement =  $db->prepare('SELECT recipeTitle
         FROM public.recipeList
         WHERE user_id = :user_id');
 
-    $statement->bindValue(':user_id', $userID);
-    $statement->execute();
+      $statement->bindValue(':user_id', $userID);
+      $statement->execute();
 
-    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      //For some reason, this query didn't work with a camel case spelling of 'recipeTitle'
-      //even though that's how I created the row in that table. 
-      $recipeTitle = $row['recipetitle'];
-      echo "Testing recipe title: " . $recipeTitle;
-    }
-    ?>
-
+      while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+        //For some reason, this query didn't work with a camel case spelling of 'recipeTitle'
+        //even though that's how I created the row in that table. 
+        $recipeTitle = $row['recipetitle'];
+        echo "Testing recipe title: " . $recipeTitle;
+      }
+      ?>
+    </section>
   </div>
-
-  <div>Click a recipe!</div><br>
 
 </body>
 
