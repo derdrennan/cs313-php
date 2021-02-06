@@ -1,6 +1,12 @@
+@font-face{
+  font-family:Impact, sans-serif;
+  src: url(fonts/myfont.ttf)
+}
+
 body {
-  background-color: #212121;
+  background-color: rgb(229, 220, 207);
   margin: 0px;
+  width: 100%;
 }
 
 .basic-grid {
@@ -15,9 +21,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #3c5aa6;
+    background: #EE1D23;
+    font-family: Bubblegum Sans, sans-serif;
     font-size: 2rem;
-    color: #fff;
+    color: rgb(245, 235, 220);
     box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
     height: 100%;
     width: 100%;
@@ -38,9 +45,9 @@ body {
   text-align: left;
 }
 
-.main-div {
-  width: 100%;
-  max-width: 960px;
+#wrapper {
+  margin:0 auto; 
+  width:1440px;
 }
 
 #add-to-cart {
@@ -55,33 +62,53 @@ body {
   min-height: 100vh;
 }
 
-#header {
-  background: #3c5aa6;
+#header-1 {
+  font-family: Bubblegum Sans, sans-serif;
+  background: rgb(245, 235, 220);
   text-align: center;
   width: 100%;
   font-size: 4rem;
-  color:#FFCB05;
+  color:#EE1D23;
   padding: 2rem;
   margin: 0;
 }
 
 #footer {
   position: absolute;
-  background: #3c5aa6;
+  background: #EE1D23;
   text-align: center;
   width: 100%;
   font-size: 1rem;
-  color: #fff;
+  color: rgb(245, 235, 220);
   padding: 1rem;
   height: 2.5rem;
+  bottom: 0;
+  font-family: Bubblegum Sans, sans-serif;
+  font-size: 1.25rem;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
 }
 
 #card-container{
-  width: 90%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-color: #181818;
+  background-color: rgb(245, 235, 220);
   padding: 6px;
+}
+
+#intro {
+  font-family: Bubblegum Sans, sans-serif;
+  font-style: normal;
+  background: rgb(245, 235, 220);
+  width: 100%;
+  font-size: 1.25rem;
+  color:rgb(80, 35, 20);
+  padding: 2rem;
+  margin: 0;
 }
 
 button {
@@ -95,16 +122,17 @@ button {
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: rgb(245, 235, 220);
+  border-bottom: 1px solid rgb(80, 35, 20);
 }
 
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: rgb(80, 35, 20);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font: 100% / 1.5 Impact, sans-serif;
 }
 
 .topnav a:hover {
