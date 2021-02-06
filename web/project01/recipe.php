@@ -33,7 +33,7 @@
     ?>
       <h1 id="header-1">
         <?php echo $recipeTitle; ?>
-      </h1>
+      </h1><br>
     <?php
     }
     ?>
