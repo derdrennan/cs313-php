@@ -19,7 +19,35 @@
 
 
   <div>Recipe Info Page</div><br>
+  <!-- Get Recipe Title -->
 
+  <div>
+    <!-- Getting Recipe Info -->
+    <?php
+    $recipeID = $_GET['recipeID'];
+    $statement =  $db->prepare('SELECT *
+        FROM public.recipeInfo
+        WHERE recipeList_id = :recipeList_id');
+
+    $statement->bindValue(':recipeList_id', $recipeID);
+    $statement->execute();
+
+    while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+      //For some reason, this query didn't work with a camel case spelling of 'recipeTitle'
+      //even though that's how I created the row in that table. 
+      $url = $row['url'];
+      $userComment = $row['userComment'];
+      $category = $row['category'];
+      $cookTime = $row['cookTime'];
+      $difficulty = $row['difficulty'];
+      echo $url;
+      echo $userComment;
+      echo $category;
+      echo $cookTime;
+      echo $difficulty;
+    }
+    ?>
+  </div>
 
 </body>
 
