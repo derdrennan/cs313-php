@@ -10,7 +10,7 @@
 
 </head>
 
-<body style="background: white;">
+<body class="page-container" style="background: white;">
 
   <ul>
     <li><a href="../week02/assignmentLinks.html">Home</a></li>
@@ -33,7 +33,7 @@
     $statement->execute();
 
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-      //For some reason, this query didn't work with a camel case spelling of 'recipeTitle'
+      //For some reason, this query didn't work with camel case punctuation of 'recipeTitle'
       //even though that's how I created the row in that table. 
       $url = $row['url'];
       $userComment = $row['usercomment'];
