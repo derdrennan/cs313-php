@@ -15,6 +15,9 @@
     <div class="topnav">
       <a href="../week02/assignmentLinks.html">Home</a>
       <a href="../project01/main.php">List of Users</a>
+      <?php
+      $userID = $_GET['user']; ?>
+      <a href="../project01/recipeForm.php?user=<?php echo $userID ?>">+Add Recipe</a>
     </div>
 
     <!-- Getting the user name -->
