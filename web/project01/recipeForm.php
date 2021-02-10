@@ -26,14 +26,14 @@
       <form id="mainForm" action="insertTopic.php" method="POST">
 
         <input type="text" id="recipeTitle" name="recipeTitle"></input>
-        <label for="recipeTitle">Title</label>
+        <label for="recipeTitle">Recipe Title</label>
         <br /><br />
 
         <input type="text" id="recipeLink" name="recipeLink"></input>
-        <label for="recipeLink">Link to Recipe</label>
+        <label for="recipeLink">Recipe Link</label>
         <br /><br />
 
-        <p>Category </p>
+        <p>Category:</p>
         <input type="radio" id="breakfast" name="category"></input>
         <label for="breakfast">Breakfast</label>
 
@@ -44,7 +44,7 @@
         <label for="dinner">Dinner</label>
         <br /><br />
 
-        <p>Cook Time</p>
+        <p>Cook Time:</p>
         <input type="radio" id="30min" name="cookTime"></input>
         <label for="30min">30 minutes or Less</label>
 
@@ -55,7 +55,7 @@
         <label for="60+min">60+ min</label>
         <br /><br />
 
-        <p>Difficulty</p>
+        <p>Difficulty:</p>
         <input type="radio" id="easy" name="difficulty"></input>
         <label for="easy">Easy</label>
 
@@ -70,8 +70,8 @@
         <textarea id="txtContent" name="txtContent" rows="8" cols="100"></textarea>
         <br /><br />
 
-
-        <input type="hidden" id="userID" name="userID" value="1">
+        <?php $userID = $_GET['user']; ?>
+        <input type="hidden" id="userID" name="userID" value="<?php echo $userID ?>">
 
         <input type="submit" value="Add to Database" />
 
