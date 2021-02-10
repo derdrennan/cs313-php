@@ -23,7 +23,7 @@
     </h1><br>
 
     <div id="wrapper">
-      <form id="mainForm" action="insertTopic.php" method="POST">
+      <form id="mainForm" action="insertRecipe.php" method="POST">
 
         <input type="text" id="recipeTitle" name="recipeTitle"></input>
         <label for="recipeTitle">Recipe Title</label>
