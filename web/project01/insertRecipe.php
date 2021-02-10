@@ -10,10 +10,10 @@ $comment = $_POST['txtContent'];
 $userID = $_POST['userID'];
 
 //Making sure values are correct
-echo "title=$title\n";
-echo "url=$url\n";
-echo "category=$category\n";
-echo "time=$time\n";
-echo "difficulty=$difficulty\n";
-echo "comment=$comment\n";
-echo "userID=$userID\n";
+// echo "title=$title\n";
+// echo "url=$url\n";
+// echo "category=$category\n";
+// echo "time=$time\n";
+// echo "difficulty=$difficulty\n";
+// echo "comment=$comment\n";
+// echo "userID=$userID\n";
