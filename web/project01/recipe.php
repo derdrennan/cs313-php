@@ -96,11 +96,10 @@
       }
       ?>
     </div>
-  </div>
 
-  <footer id="footer">
-    <p>Thanks for visiting!</p>
-  </footer>
+    <footer id="footer">
+      <p>Thanks for visiting!</p>
+    </footer>
 
   </div>
 
