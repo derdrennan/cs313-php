@@ -34,35 +34,38 @@
         <br /><br />
 
         <p>Category:</p>
-        <input type="radio" id="breakfast" name="category"></input>
+        <input type="radio" id="breakfast" name="category" value="Breakfast"></input>
         <label for="breakfast">Breakfast</label>
 
-        <input type="radio" id="lunch" name="category"></input>
+        <input type="radio" id="lunch" name="category" value="Lunch"></input>
         <label for="lunch">Lunch</label>
 
-        <input type="radio" id="dinner" name="category"></input>
+        <input type="radio" id="dinner" name="category" value="Dinner"></input>
         <label for="dinner">Dinner</label>
+
+        <input type="radio" id="snack/treat" name="category" value="Snack/Treat"></input>
+        <label for="snack/treat">Snack/Treat</label>
         <br /><br />
 
         <p>Cook Time:</p>
-        <input type="radio" id="30min" name="cookTime"></input>
+        <input type="radio" id="30min" name="cookTime" value="<30 Min"></input>
         <label for="30min">30 minutes or Less</label>
 
-        <input type="radio" id="30-60min" name="cookTime"></input>
+        <input type="radio" id="30-60min" name="cookTime" value="30-60 Min"></input>
         <label for="30-60min">30-60min</label>
 
-        <input type="radio" id="60+min" name="cookTime"></input>
+        <input type="radio" id="60+min" name="cookTime" value="+60 Min"></input>
         <label for="60+min">60+ min</label>
         <br /><br />
 
         <p>Difficulty:</p>
-        <input type="radio" id="easy" name="difficulty"></input>
+        <input type="radio" id="easy" name="difficulty" value="Easy"></input>
         <label for="easy">Easy</label>
 
-        <input type="radio" id="medium" name="difficulty"></input>
+        <input type="radio" id="medium" name="difficulty" value="Medium"></input>
         <label for="medium">Medium</label>
 
-        <input type="radio" id="hard" name="difficulty"></input>
+        <input type="radio" id="hard" name="difficulty" value="Hard"></input>
         <label for="hard">Hard</label>
         <br /><br />
 
