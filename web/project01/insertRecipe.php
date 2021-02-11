@@ -6,13 +6,13 @@ require_once("../project01/dbFunctions.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Values for queries
-  $title = $_POST['recipeTitle'];
-  $url = $_POST['recipeLink'];
+  $title = $_POST['recipetitle'];
+  $url = $_POST['recipelink'];
   $category = $_POST['category'];
-  $time = $_POST['cookTime'];
+  $time = $_POST['cooktime'];
   $difficulty = $_POST['difficulty'];
-  $comment = $_POST['txtContent'];
-  $userID = $_POST['userID'];
+  $comment = $_POST['txtcontent'];
+  $userID = $_POST['userid'];
 
   //Making sure values are correct
   // echo "title=$title\n";
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   insert($recipeTitleQuery, $titleArray);
 
   //Adding the recipe info
-  $recipeInfoQuery = 'INSERT INTO public.recipeInfo(url, userComment, category, cookTime, difficulty, recipeList_id) 
+  $recipeInfoQuery = 'INSERT INTO public.recipeInfo(url, usercomment, category, cooktime, difficulty, recipelist_id) 
                     VALUES(:url, :comment, :category, :cookTime, :difficulty, :recipeList_id)';
   $recipeInfoArray = array(
     ':url' => $url, 'comment' => $comment, ':category' => $category, ':cookTime' => $time,
