@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   insert($recipeTitleQuery, $titleArray);
 
   //Adding the recipe info
-  $recipeInfoQuery = 'INSERT INTO public.recpeInfo(url, userComment, category, cookTime, difficulty, recipeList_id) 
+  $recipeInfoQuery = 'INSERT INTO public.recipeInfo(url, userComment, category, cookTime, difficulty, recipeList_id) 
                     VALUES(:url, :comment, :category, :cookTime, :difficulty, :recipeList_id)';
   $recipeInfoArray = array(
     ':url' => $url, 'comment' => $comment, ':category' => $category, ':cookTime' => $time,
