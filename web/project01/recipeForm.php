@@ -29,8 +29,8 @@
         <label for="recipeTitle">Recipe Title</label>
         <br /><br />
 
-        <input type="text" id="recipeLink" name="recipeLink"></input>
-        <label for="recipeLink">Recipe Link</label>
+        <input type="text" id="url" name="url"></input>
+        <label for="url">Recipe Link</label>
         <br /><br />
 
         <p>Category:</p>
@@ -69,8 +69,8 @@
         <label for="hard">Hard</label>
         <br /><br />
 
-        <label for="txtContent">Special Instructions:</label><br />
-        <textarea id="txtContent" name="txtContent" rows="8" cols="100"></textarea>
+        <label for="userComment">Special Instructions:</label><br />
+        <textarea id="userComment" name="userComment" rows="8" cols="100"></textarea>
         <br /><br />
 
         <?php $userID = $_GET['user']; ?>
