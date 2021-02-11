@@ -34,6 +34,7 @@
       <div id="card-container">
         <section class="basic-grid">
           <?php
+          $db = get_db();
           foreach ($db->query('SELECT id, username FROM public.user') as $row) {
           ?>
             <a href="../project01/recipeList.php?user=<?php echo $row['id'] ?>" class="assignment-style link-style">
