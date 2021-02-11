@@ -6,12 +6,12 @@ require_once("../project01/dbFunctions.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Values for queries
-  $title = $_POST['recipetitle'];
+  $recipetitle = $_POST['recipetitle'];
   $url = $_POST['recipelink'];
   $category = $_POST['category'];
-  $time = $_POST['cooktime'];
+  $cookTime = $_POST['cooktime'];
   $difficulty = $_POST['difficulty'];
-  $comment = $_POST['txtcontent'];
+  $userComment = $_POST['txtcontent'];
   $userID = $_POST['userid'];
 
   //Making sure values are correct
@@ -26,16 +26,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // we could (and should!) put additional checks here to verify that all this data is actually provided
 
   //Adding the title
-  $recipeTitleQuery = 'INSERT INTO public.recipeList(recipetitle, user_id) VALUES(:title, :userID)';
-  $titleArray = array(':title' => $title, ':userID' => $userID);
+  $recipeTitleQuery = 'INSERT INTO public.recipeList(recipetitle, user_id) VALUES(:recipetitle, :userID)';
+  $titleArray = array(':recipetitle' => $recipetitle, ':userID' => $userID);
 
   insert($recipeTitleQuery, $titleArray);
 
   //Adding the recipe info
-  $recipeInfoQuery = 'INSERT INTO public.recipeInfo(url, usercomment, category, cooktime, difficulty, recipelist_id) 
-                    VALUES(:url, :comment, :category, :cookTime, :difficulty, :recipeList_id)';
+  $recipeInfoQuery = 'INSERT INTO public.recipeInfo(url, userComment, category, cookTime, difficulty, recipeList_id) 
+                    VALUES(:url, :userComment, :category, :cookTime, :difficulty, :recipeList_id)';
   $recipeInfoArray = array(
-    ':url' => $url, 'comment' => $comment, ':category' => $category, ':cookTime' => $time,
+    ':url' => $url, 'userComment' => $userComment, ':category' => $category, ':cookTime' => $cookTime,
     ':difficulty' => $difficulty, ':recipeList_id' => $userID
   );
 
