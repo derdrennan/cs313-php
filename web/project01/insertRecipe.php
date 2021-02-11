@@ -31,6 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   insert($recipeTitleQuery, $titleArray);
 
+  echo "Line 34 after first insert. ";
+
   //Adding the recipe info
   $recipeInfoQuery = 'INSERT INTO public.recipeInfo(url, userComment, category, cookTime, difficulty, recipeList_id) 
                     VALUES(:url, :userComment, :category, :cookTime, :difficulty, :recipeList_id)';
@@ -40,6 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   );
 
   insert($recipeInfoQuery, $recipeInfoArray);
+
+  echo "Line 46 after first insert. ";
 } else {
 
   exit('Invalid Request');
