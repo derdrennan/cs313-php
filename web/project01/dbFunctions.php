@@ -32,7 +32,7 @@ function insert($query, $array)
   }
 
   // finally, redirect them to a new page to actually show the topics
-  header("Location: ../project01/recipeList.php");
+  //header("Location: ../project01/recipeList.php");
 
   die();
 }

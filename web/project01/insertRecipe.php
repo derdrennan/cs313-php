@@ -15,13 +15,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $userID = $_POST['userID'];
 
   //Making sure values are correct
-  // echo "title=$title\n";
-  // echo "url=$url\n";
-  // echo "category=$category\n";
-  // echo "time=$time\n";
-  // echo "difficulty=$difficulty\n";
-  // echo "comment=$comment\n";
-  // echo "userID=$userID\n";
+  echo "recipeTitle=$recipeTitle\n";
+  echo "url=$url\n";
+  echo "category=$category\n";
+  echo "cookTime=$cookTime\n";
+  echo "difficulty=$difficulty\n";
+  echo "userComment=$userComment\n";
+  echo "userID=$userID\n";
 
   // we could (and should!) put additional checks here to verify that all this data is actually provided
 
