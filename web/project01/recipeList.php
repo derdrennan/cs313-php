@@ -23,6 +23,7 @@
     <!-- Getting the user name -->
     <h1 id="header-1">
       <?php
+      $db = get_db();
       $userID = $_GET['user'];
       $statement =  $db->prepare('SELECT username
         FROM public.user

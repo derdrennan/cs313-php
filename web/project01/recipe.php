@@ -20,6 +20,7 @@
 
     <!-- Get Recipe Title -->
     <?php
+    $db = get_db();
     $recipeID = $_GET['recipeID'];
     $statement =  $db->prepare('SELECT recipeTitle
         FROM public.recipeList
