@@ -44,6 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   insert($recipeInfoQuery, $recipeInfoArray);
 
   echo "Line 46 after first insert. ";
+
+  die();
 } else {
 
   exit('Invalid Request');
