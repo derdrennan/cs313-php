@@ -34,15 +34,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   echo "Line 34 after first insert. ";
   $db = get_db();
-  $newId = $db->lastInsertId('recipelist_id_seq');
-
+  $recipeList_id = getNewestRecipeID();
 
   //Adding the recipe info
   $recipeInfoQuery = 'INSERT INTO public.recipeInfo(url, userComment, category, cookTime, difficulty, recipeList_id) 
                     VALUES(:url, :userComment, :category, :cookTime, :difficulty, :recipeList_id)';
   $recipeInfoArray = array(
     ':url' => $url, 'userComment' => $userComment, ':category' => $category, ':cookTime' => $cookTime,
-    ':difficulty' => $difficulty, ':recipeList_id' => $newId
+    ':difficulty' => $difficulty, ':recipeList_id' => $recipeList_id
   );
 
   insert($recipeInfoQuery, $recipeInfoArray);

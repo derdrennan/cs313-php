@@ -36,3 +36,16 @@ function insert($query, $array)
 
   //die();
 }
+
+function getNewestRecipeID()
+{
+  $db = get_db();
+  $statement = $db->prepare('SELECT currval(recipelist_id_seq)');
+
+  $statement->execute();
+
+  $row = $statement->fetch();
+  $recipeList_ID = $row['recipeList_id'];
+
+  return $recipeList_ID;
+}
