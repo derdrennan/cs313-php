@@ -27,14 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // we could (and should!) put additional checks here to verify that all this data is actually provided
 
   //Adding the title
-  $recipeTitleQuery = 'INSERT INTO public.recipeList(recipeTitle, user_id) VALUES(:recipeTitle, :userID)';
+  $recipeTitleQuery = 'INSERT INTO public.recipeList(recipeTitle, user_id) VALUES(:recipeTitle, :userID) RETURNING id';
   $titleArray = array(':recipeTitle' => $recipeTitle, ':userID' => $userID);
 
-  insert($recipeTitleQuery, $titleArray);
+  $recipeList_id = insert($recipeTitleQuery, $titleArray);
 
   echo "Line 34 after first insert. ";
-  $db = get_db();
-  $recipeList_id = getNewestRecipeID();
 
   //Adding the recipe info
   $recipeInfoQuery = 'INSERT INTO public.recipeInfo(url, userComment, category, cookTime, difficulty, recipeList_id) 

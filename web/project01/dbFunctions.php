@@ -24,6 +24,8 @@ function insert($query, $array)
     }
 
     $statement->execute();
+    $row = $statement->fetch();
+    $id = $row['id'];
   } catch (Exception $ex) {
     // Please be aware that you don't want to output the Exception message in
     // a production environment
@@ -35,17 +37,5 @@ function insert($query, $array)
   //header("Location: ../project01/recipeList.php");
 
   //die();
-}
-
-function getNewestRecipeID()
-{
-  $db = get_db();
-  $statement = $db->prepare("SELECT currval('recipelist_id_seq')");
-
-  $statement->execute();
-
-  $row = $statement->fetch();
-  $recipeList_ID = $row['recipeList_id'];
-
-  return $recipeList_ID;
+  return $id;
 }
