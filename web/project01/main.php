@@ -8,7 +8,15 @@
   <link rel="stylesheet" type="text/css" href="../project01/styles.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bubblegum+Sans" />
   <?php include('../project01/dbFunctions.php') ?>
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
 
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+  </script>
 </head>
 
 <body>
@@ -16,6 +24,19 @@
   <div id="page-container">
     <div class="topnav">
       <a href="../week02/assignmentLinks.html">Home</a>
+      <button class="open-button" onclick="openForm()">Add User</button>
+    </div>
+
+    <div class="form-popup" id="myForm">
+      <form action="insertUser.php" class="form-container" method="POST">
+        <h1>Add New User</h1>
+
+        <label for="username"><b>Username</b></label>
+        <input type="text" id="username" placeholder="Enter Name" name="username" required>
+
+        <button type="submit" class="btn">Submit</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
     </div>
 
     <h1 id="header-1">Family Recipe Sharing</h1><br>
