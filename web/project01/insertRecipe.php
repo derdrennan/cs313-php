@@ -1,6 +1,7 @@
 <?php
 
 require_once("../project01/dbFunctions.php");
+include('../connections.php');
 
 //Validate the request method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -32,7 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   insert($recipeTitleQuery, $titleArray);
 
   echo "Line 34 after first insert. ";
-  $newId = $pdo->lastInsertId('recipelist_id_seq');
+  $db = get_db();
+  $newId = $db->lastInsertId('recipelist_id_seq');
 
 
   //Adding the recipe info
