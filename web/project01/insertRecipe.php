@@ -1,7 +1,7 @@
 <?php
 
 require_once("../project01/dbFunctions.php");
-include('../connections.php');
+require_once('../connections.php');
 
 //Validate the request method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -1,6 +1,6 @@
 <?php
 
-require("../connections.php");
+require_once("../connections.php");
 
 function insert($query, $array)
 {
