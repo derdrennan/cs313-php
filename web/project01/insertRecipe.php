@@ -32,13 +32,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   insert($recipeTitleQuery, $titleArray);
 
   echo "Line 34 after first insert. ";
+  $newId = $pdo->lastInsertId('recipelist_id_seq');
+
 
   //Adding the recipe info
   $recipeInfoQuery = 'INSERT INTO public.recipeInfo(url, userComment, category, cookTime, difficulty, recipeList_id) 
                     VALUES(:url, :userComment, :category, :cookTime, :difficulty, :recipeList_id)';
   $recipeInfoArray = array(
     ':url' => $url, 'userComment' => $userComment, ':category' => $category, ':cookTime' => $cookTime,
-    ':difficulty' => $difficulty, ':recipeList_id' => $userID
+    ':difficulty' => $difficulty, ':recipeList_id' => $newId
   );
 
   insert($recipeInfoQuery, $recipeInfoArray);
