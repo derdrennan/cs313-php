@@ -40,7 +40,7 @@ function insert($query, $array)
 function getNewestRecipeID()
 {
   $db = get_db();
-  $statement = $db->prepare('SELECT currval(recipelist_id_seq)');
+  $statement = $db->prepare("SELECT currval('recipelist_id_seq')");
 
   $statement->execute();
 
