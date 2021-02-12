@@ -7,7 +7,7 @@
   <title>Project 01: Recipe List</title>
   <link rel="stylesheet" type="text/css" href="../project01/styles.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bubblegum+Sans" />
-  <?php include('../connections.php') ?>
+  <?php include('../project01/dbFunctions.php') ?>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
       <a href="../project01/main.php">List of Users</a>
     </div>
 
-    <!-- Getting the user name -->
+    <!-- This form collects all the info to add a new recipe for a user -->
     <h1 id="header-1">
       Entry Form
     </h1><br>

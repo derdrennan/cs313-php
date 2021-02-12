@@ -7,7 +7,7 @@
   <title>Project 01: Recipe Info</title>
   <link rel="stylesheet" type="text/css" href="../project01/styles.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bubblegum+Sans" />
-  <?php include('../connections.php') ?>
+  <?php include('../project01/dbFunctions.php') ?>
 </head>
 
 <body>

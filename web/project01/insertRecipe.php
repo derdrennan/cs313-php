@@ -1,7 +1,6 @@
 <?php
 
 require_once("../project01/dbFunctions.php");
-require_once('../connections.php');
 
 //Validate the request method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -15,15 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $userComment = $_POST['userComment'];
   $userID = $_POST['userID'];
 
-  //Making sure values are correct
-  echo "recipeTitle=$recipeTitle\n";
-  echo "url=$url\n";
-  echo "category=$category\n";
-  echo "cookTime=$cookTime\n";
-  echo "difficulty=$difficulty\n";
-  echo "userComment=$userComment\n";
-  echo "userID=$userID\n";
-
   // we could (and should!) put additional checks here to verify that all this data is actually provided
 
   //Adding the title
@@ -31,8 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $titleArray = array(':recipeTitle' => $recipeTitle, ':userID' => $userID);
 
   $recipeList_id = insert($recipeTitleQuery, $titleArray);
-
-  echo "Line 34 after first insert. ";
 
   //Adding the recipe info
   $recipeInfoQuery = 'INSERT INTO public.recipeInfo(url, userComment, category, cookTime, difficulty, recipeList_id) 
@@ -44,7 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   insert($recipeInfoQuery, $recipeInfoArray);
 
-  echo "Line 46 after first insert. ";
+  //Take 
+  header("Location: ../project01/recipeList.php?user=$userID");
 
   die();
 } else {
