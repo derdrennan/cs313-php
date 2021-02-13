@@ -24,7 +24,8 @@
   <div id="page-container">
     <div class="topnav">
       <a href="../week02/assignmentLinks.html">Home</a>
-      <button class="open-button" onclick="openForm()">Add User</button>
+      <a class="open-button" onclick="openForm()">Add User</button>
+        <!-- <a href="" onclick="openForm()">Add User</button> -->
     </div>
 
     <div class="form-popup" id="myForm">
