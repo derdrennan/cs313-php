@@ -71,7 +71,7 @@ body {
   display: none;
   position: fixed;
   /* bottom: 0; */
-  left: 15px;
+  left:70px;
   border: 3px solid;
   z-index: 9;
   border-color: rgb(80, 35, 20);
@@ -88,7 +88,7 @@ body {
 
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
-  width: 260px;
+  width: 266px;
   padding: 16px 20px;
   margin-bottom: 10px;
   border: none;
@@ -101,6 +101,7 @@ body {
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
   /* background-color: #ddd; */
   border: 2px;
+  border-color: rgb(80, 35, 20);
   outline: none;
 }
 
