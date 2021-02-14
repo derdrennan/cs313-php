@@ -9,6 +9,10 @@ body {
   width: 100%;
 }
 
+* {
+  box-sizing: border-box;
+} 
+
 /*****************************************
   For layout purposes
 *****************************************/
@@ -95,7 +99,8 @@ body {
 
 /* When the inputs get focus, do something */
 .form-container input[type=text]:focus, .form-container input[type=password]:focus {
-  background-color: #ddd;
+  /* background-color: #ddd; */
+  border: 2px;
   outline: none;
 }
 
@@ -110,6 +115,7 @@ body {
   margin-bottom:10px;
   opacity: 0.8;
   font-family: Bubblegum Sans, sans-serif;
+  font-size: 1.5rem;
   border: 1px solid;
   border-color: rgb(80, 35, 20);
 }
