@@ -89,7 +89,7 @@ body {
 /* Full-width input fields */
 .form-container input[type=text], .form-container input[type=password] {
   width: 266px;
-  padding: 16px 20px;
+  padding: 10px 20px;
   margin-bottom: 10px;
   border: none;
   background: #f1f1f1;
@@ -102,7 +102,7 @@ body {
   /* background-color: #ddd; */
   border: 2px;
   border-color: rgb(80, 35, 20);
-  outline: none;
+  /* outline: none; */
 }
 
 /* Set a style for the submit/login button */
