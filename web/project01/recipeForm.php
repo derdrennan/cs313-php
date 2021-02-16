@@ -19,7 +19,7 @@
 
     <!-- This form collects all the info to add a new recipe for a user -->
     <h1 id="header-1">
-      Entry Form
+      New Recipe
     </h1><br>
 
     <div id="wrapper">
@@ -37,13 +37,13 @@
         <input type="radio" id="breakfast" name="category" value="Breakfast" class="boxed-input"></input>
         <label for="breakfast" class="boxed-label">Breakfast</label>
 
-        <input type="radio" id="lunch" name="category" value="Lunch"></input>
+        <input type="radio" id="lunch" name="category" value="Lunch" class="boxed-input"></input>
         <label for="lunch" class="boxed-label">Lunch</label>
 
-        <input type="radio" id="dinner" name="category" value="Dinner"></input>
+        <input type="radio" id="dinner" name="category" value="Dinner" class="boxed-input"></input>
         <label for="dinner" class="boxed-label">Dinner</label>
 
-        <input type="radio" id="snack/treat" name="category" value="Snack/Treat"></input>
+        <input type="radio" id="snack/treat" name="category" value="Snack/Treat" class="boxed-input"></input>
         <label for="snack/treat" class="boxed-label">Snack/Treat</label>
         <br /><br />
 
@@ -51,10 +51,10 @@
         <input type="radio" id="30min" name="cookTime" value="<30 Min" class="boxed-input"></input>
         <label for="30min" class="boxed-label">30 minutes or Less</label>
 
-        <input type="radio" id="30-60min" name="cookTime" value="30-60 Min"></input>
+        <input type="radio" id="30-60min" name="cookTime" value="30-60 Min" class="boxed-input"></input>
         <label for="30-60min" class="boxed-label">30-60min</label>
 
-        <input type="radio" id="60+min" name="cookTime" value="+60 Min"></input>
+        <input type="radio" id="60+min" name="cookTime" value="+60 Min" class="boxed-input"></input>
         <label for="60+min" class="boxed-label">60+ min</label>
         <br /><br />
 
@@ -62,10 +62,10 @@
         <input type="radio" id="easy" name="difficulty" value="Easy" class="boxed-input"></input>
         <label for="easy" class="boxed-label">Easy</label>
 
-        <input type="radio" id="medium" name="difficulty" value="Medium"></input>
+        <input type="radio" id="medium" name="difficulty" value="Medium" class="boxed-input"></input>
         <label for="medium" class="boxed-label">Medium</label>
 
-        <input type="radio" id="hard" name="difficulty" value="Hard"></input>
+        <input type="radio" id="hard" name="difficulty" value="Hard" class="boxed-input"></input>
         <label for="hard" class="boxed-label">Hard</label>
         <br /><br />
 
