@@ -26,57 +26,57 @@
       <form id="mainForm" action="insertRecipe.php" method="POST">
 
         <input type="text" id="recipeTitle" name="recipeTitle"></input>
-        <label for="recipeTitle">Recipe Title</label>
+        <label for="recipeTitle" class="form-style">Recipe Title</label>
         <br /><br />
 
         <input type="text" id="url" name="url"></input>
-        <label for="url">Recipe Link</label>
+        <label for="url" class="form-style">Recipe Link</label>
         <br /><br />
 
-        <p>Category:</p>
-        <input type="radio" id="breakfast" name="category" value="Breakfast"></input>
-        <label for="breakfast">Breakfast</label>
+        <p class="form-style">Category:</p>
+        <input type="radio" id="breakfast" name="category" value="Breakfast" class="boxed-input"></input>
+        <label for="breakfast" class="boxed-label">Breakfast</label>
 
         <input type="radio" id="lunch" name="category" value="Lunch"></input>
-        <label for="lunch">Lunch</label>
+        <label for="lunch" class="boxed-label">Lunch</label>
 
         <input type="radio" id="dinner" name="category" value="Dinner"></input>
-        <label for="dinner">Dinner</label>
+        <label for="dinner" class="boxed-label">Dinner</label>
 
         <input type="radio" id="snack/treat" name="category" value="Snack/Treat"></input>
-        <label for="snack/treat">Snack/Treat</label>
+        <label for="snack/treat" class="boxed-label">Snack/Treat</label>
         <br /><br />
 
-        <p>Cook Time:</p>
-        <input type="radio" id="30min" name="cookTime" value="<30 Min"></input>
-        <label for="30min">30 minutes or Less</label>
+        <p class="form-style">Cook Time:</p>
+        <input type="radio" id="30min" name="cookTime" value="<30 Min" class="boxed-input"></input>
+        <label for="30min" class="boxed-label">30 minutes or Less</label>
 
         <input type="radio" id="30-60min" name="cookTime" value="30-60 Min"></input>
-        <label for="30-60min">30-60min</label>
+        <label for="30-60min" class="boxed-label">30-60min</label>
 
         <input type="radio" id="60+min" name="cookTime" value="+60 Min"></input>
-        <label for="60+min">60+ min</label>
+        <label for="60+min" class="boxed-label">60+ min</label>
         <br /><br />
 
-        <p>Difficulty:</p>
-        <input type="radio" id="easy" name="difficulty" value="Easy"></input>
-        <label for="easy">Easy</label>
+        <p class="form-style">Difficulty:</p>
+        <input type="radio" id="easy" name="difficulty" value="Easy" class="boxed-input"></input>
+        <label for="easy" class="boxed-label">Easy</label>
 
         <input type="radio" id="medium" name="difficulty" value="Medium"></input>
-        <label for="medium">Medium</label>
+        <label for="medium" class="boxed-label">Medium</label>
 
         <input type="radio" id="hard" name="difficulty" value="Hard"></input>
-        <label for="hard">Hard</label>
+        <label for="hard" class="boxed-label">Hard</label>
         <br /><br />
 
-        <label for="userComment">Special Instructions:</label><br />
+        <label for="userComment" class="form-style">Special Instructions:</label><br />
         <textarea id="userComment" name="userComment" rows="8" cols="100"></textarea>
         <br /><br />
 
         <?php $userID = $_GET['user']; ?>
         <input type="hidden" id="userID" name="userID" value="<?php echo $userID ?>">
 
-        <input type="submit" value="Add to Database" />
+        <input type="submit" class="form-style" value="Add to Database" />
 
       </form>
 

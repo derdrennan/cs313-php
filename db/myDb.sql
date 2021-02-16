@@ -1,6 +1,10 @@
 CREATE TABLE public.user (
   id SERIAL NOT NULL PRIMARY KEY,
-  username VARCHAR(100) NOT NULL
+  username VARCHAR(100) NOT NULL,
+  email varchar(254) NOT NULL,
+  password varchar(100) NOT NULL,
+  token varchar(6) NOT NULL,
+  expdate timestamp NOT NULL
 );
 
 CREATE TABLE public.recipeList (

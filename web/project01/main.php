@@ -10,12 +10,12 @@
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bubblegum+Sans" />
   <?php include('../project01/dbFunctions.php') ?>
   <script>
-    function openForm() {
-      document.getElementById("myForm").style.display = "block";
+    function openForm(formID) {
+      document.getElementById(formID).style.display = "block";
     }
 
-    function closeForm() {
-      document.getElementById("myForm").style.display = "none";
+    function closeForm(formID) {
+      document.getElementById(formID).style.display = "none";
     }
   </script>
 </head>
@@ -27,7 +27,7 @@
 
       <div class="topnav">
         <a href="../week02/assignmentLinks.html">Home</a>
-        <a class="open-button" onclick="openForm()">Add User</a>
+        <a class="open-button" onclick="openForm('myForm')">Add User</a>
       </div>
 
       <div class="form-popup" id="myForm">
@@ -38,7 +38,7 @@
           <input type="text" id="username" placeholder="Enter Name" name="username" required>
 
           <button type="submit" class="btn">Submit</button>
-          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          <button type="button" class="btn cancel" onclick="closeForm('myForm')">Close</button>
         </form>
       </div>
 

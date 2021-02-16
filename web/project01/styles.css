@@ -209,6 +209,67 @@ body {
 }
 
 /*****************************************
+  Form on New Recipe Page
+*****************************************/
+.form-style {
+  float: left;
+  text-align: center;
+  background: #EE1D23;
+  font-family: Bubblegum Sans, sans-serif;
+  font-size: 1.5rem;
+  color: rgb(245, 235, 220);
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 30px;
+  width: 200px;
+  padding: .25rem;
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: .5rem;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: .5rem;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/*** Square Radio Buttons ****/
+.boxed-label {
+  display: inline-block;
+  width: 180px;
+  padding: 10px;
+  border: solid 2px #ccc;
+  transition: all 0.3s;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: .25rem;
+  height: 30px;
+  margin: .5rem .1rem .5rem .1rem;
+  border-radius: 4px;
+  background-color: white;
+  font-family: Bubblegum Sans, sans-serif;
+}
+
+.boxed-input[type="radio"] {
+  display: none;
+}
+
+.boxed-input[type="radio"]:checked + label {
+  background-color:  #EE1D23;
+  color: rgb(245, 235, 220);
+}
+
+/*****************************************
   Footer
 *****************************************/
 #footer {
