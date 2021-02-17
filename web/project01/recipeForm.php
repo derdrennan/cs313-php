@@ -25,16 +25,16 @@
     <div id="wrapper">
       <form id="mainForm" action="insertRecipe.php" method="POST">
 
-        <input type="text" id="recipeTitle" name="recipeTitle"></input>
+        <input type="text" id="recipeTitle" name="recipeTitle" minlength="2"></input>
         <label for="recipeTitle" class="form-style">Recipe Title</label>
         <br /><br />
 
-        <input type="text" id="url" name="url"></input>
+        <input type="text" id="url" name="url" pattern="^(?:(?:https?|HTTPS?|ftp|FTP):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-zA-Z\u00a1-\uffff0-9]-*)*[a-zA-Z\u00a1-\uffff0-9]+)(?:\.(?:[a-zA-Z\u00a1-\uffff0-9]-*)*[a-zA-Z\u00a1-\uffff0-9]+)*)(?::\d{2,})?(?:[\/?#]\S*)?$"></input>
         <label for="url" class="form-style">Recipe Link</label>
         <br /><br />
 
         <p class="form-style">Category:</p>
-        <input type="radio" id="breakfast" name="category" value="Breakfast" class="boxed-input"></input>
+        <input type="radio" id="breakfast" name="category" value="Breakfast" class="boxed-input" required></input>
         <label for="breakfast" class="boxed-label">Breakfast</label>
 
         <input type="radio" id="lunch" name="category" value="Lunch" class="boxed-input"></input>
@@ -48,7 +48,7 @@
         <br /><br />
 
         <p class="form-style">Cook Time:</p>
-        <input type="radio" id="30min" name="cookTime" value="<30 Min" class="boxed-input"></input>
+        <input type="radio" id="30min" name="cookTime" value="<30 Min" class="boxed-input" required></input>
         <label for="30min" class="boxed-label">30 minutes or Less</label>
 
         <input type="radio" id="30-60min" name="cookTime" value="30-60 Min" class="boxed-input"></input>
@@ -59,7 +59,7 @@
         <br /><br />
 
         <p class="form-style">Difficulty:</p>
-        <input type="radio" id="easy" name="difficulty" value="Easy" class="boxed-input"></input>
+        <input type="radio" id="easy" name="difficulty" value="Easy" class="boxed-input" required></input>
         <label for="easy" class="boxed-label">Easy</label>
 
         <input type="radio" id="medium" name="difficulty" value="Medium" class="boxed-input"></input>

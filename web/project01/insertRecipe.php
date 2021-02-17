@@ -14,52 +14,50 @@ function test_input($data)
 //Validate the request method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   //Defining the variables
-  $recipeTitle = $url = $category = $cookTime = $difficulty = $userComment = "";
-  $recipeTitleErr = $urlErr = $categoryErr = $cookTimeErr = $difficultyErr = $userCommentErr = "";
+  // $recipeTitle = $url = $category = $cookTime = $difficulty = $userComment = "";
+  // $recipeTitleErr = $urlErr = $categoryErr = $cookTimeErr = $difficultyErr = $userCommentErr = "";
 
-  if (empty($_POST["recipeTitle"])) {
-    $recipeTitleErr = "Title is required";
-  } else {
-    $recipeTitle = test_input($_POST["recipeTitle"]);
-  }
+  // if (empty($_POST["recipeTitle"])) {
+  //   $recipeTitleErr = "Title is required";
+  // } else {
+  //   $recipeTitle = test_input($_POST["recipeTitle"]);
+  // }
 
-  if (empty($_POST["url"])) {
-    $urlErr = "URL is required";
-  } else {
-    $url = test_input($_POST["url"]);
-    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $url)) {
-      $urlErr = "Invalid URL (https:// is required)";
-    }
-  }
+  // if (empty($_POST["url"])) {
+  //   $urlErr = "URL is required";
+  // } else {
+  //   $url = test_input($_POST["url"]);
+  //   if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $url)) {
+  //     $urlErr = "Invalid URL (https:// is required)";
+  //   }
+  // }
 
-  if (empty($_POST["category"])) {
-    $categoryErr = "Category is required";
-  } else {
-    $category = test_input($_POST["category"]);
-  }
+  // if (empty($_POST["category"])) {
+  //   $categoryErr = "Category is required";
+  // } else {
+  //   $category = test_input($_POST["category"]);
+  // }
 
-  if (empty($_POST["cookTime"])) {
-    $cookTimeErr = "Choose a cooktime";
-  } else {
-    $cookTime = test_input($_POST["cookTime"]);
-  }
+  // if (empty($_POST["cookTime"])) {
+  //   $cookTimeErr = "Choose a cooktime";
+  // } else {
+  //   $cookTime = test_input($_POST["cookTime"]);
+  // }
 
-  if (empty($_POST["difficulty"])) {
-    $difficultyErr = "Choose a difficulty";
-  } else {
-    $difficulty = test_input($_POST["difficulty"]);
-  }
+  // if (empty($_POST["difficulty"])) {
+  //   $difficultyErr = "Choose a difficulty";
+  // } else {
+  //   $difficulty = test_input($_POST["difficulty"]);
+  // }
 
   // Values for queries
-  //$recipeTitle = $_POST['recipeTitle'];
-  //$url = $_POST['url'];
-  //$category = $_POST['category'];
-  //$cookTime = $_POST['cookTime'];
-  //$difficulty = $_POST['difficulty'];
-  //$userComment = $_POST['userComment'];
-  $userID = $_POST['userID'];
-
-  // we could (and should!) put additional checks here to verify that all this data is actually provided
+  $recipeTitle = test_input($_POST['recipeTitle']);
+  $url = test_input($_POST['url']);
+  $category = test_input($_POST['category']);
+  $cookTime = test_input($_POST['cookTime']);
+  $difficulty = test_input($_POST['difficulty']);
+  $userComment = test_input($_POST['userComment']);
+  $userID = test_input($_POST['userID']);
 
   //Adding the title
   $recipeTitleQuery = 'INSERT INTO public.recipeList(recipeTitle, user_id) VALUES(:recipeTitle, :userID) RETURNING id';
