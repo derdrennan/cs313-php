@@ -6,13 +6,15 @@ require_once("../project01/dbFunctions.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Values for queries
-  $username = $_POST['username'];
+  $username = test_input($_POST['username']);
+  $email = test_input($_POST['email']);
+  $password = test_input($_POST['password']);
 
-  // we could (and should!) put additional checks here to verify that all this data is actually provided
+  $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
   //Adding the title
-  $usernameQuery = 'INSERT INTO public.user(username) VALUES(:username)';
-  $usernameArray = array(':username' => $username);
+  $usernameQuery = 'INSERT INTO public.user(username, email, password) VALUES(:username, :email, :password)';
+  $usernameArray = array(':username' => $username, ':email' => $email, 'password' => $hashedPassword);
 
   insert($usernameQuery, $usernameArray);
 

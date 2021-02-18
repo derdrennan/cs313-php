@@ -2,53 +2,8 @@
 
 require_once("../project01/dbFunctions.php");
 
-//Sanitization
-function test_input($data)
-{
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-
 //Validate the request method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  //Defining the variables
-  // $recipeTitle = $url = $category = $cookTime = $difficulty = $userComment = "";
-  // $recipeTitleErr = $urlErr = $categoryErr = $cookTimeErr = $difficultyErr = $userCommentErr = "";
-
-  // if (empty($_POST["recipeTitle"])) {
-  //   $recipeTitleErr = "Title is required";
-  // } else {
-  //   $recipeTitle = test_input($_POST["recipeTitle"]);
-  // }
-
-  // if (empty($_POST["url"])) {
-  //   $urlErr = "URL is required";
-  // } else {
-  //   $url = test_input($_POST["url"]);
-  //   if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i", $url)) {
-  //     $urlErr = "Invalid URL (https:// is required)";
-  //   }
-  // }
-
-  // if (empty($_POST["category"])) {
-  //   $categoryErr = "Category is required";
-  // } else {
-  //   $category = test_input($_POST["category"]);
-  // }
-
-  // if (empty($_POST["cookTime"])) {
-  //   $cookTimeErr = "Choose a cooktime";
-  // } else {
-  //   $cookTime = test_input($_POST["cookTime"]);
-  // }
-
-  // if (empty($_POST["difficulty"])) {
-  //   $difficultyErr = "Choose a difficulty";
-  // } else {
-  //   $difficulty = test_input($_POST["difficulty"]);
-  // }
 
   // Values for queries
   $recipeTitle = test_input($_POST['recipeTitle']);

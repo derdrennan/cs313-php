@@ -1,11 +1,13 @@
 CREATE TABLE public.user (
   id SERIAL NOT NULL PRIMARY KEY,
   username VARCHAR(100) NOT NULL,
-  email varchar(254) NOT NULL,
-  password varchar(100) NOT NULL,
-  token varchar(6) NOT NULL,
-  expdate timestamp NOT NULL
 );
+
+ALTER TABLE public.user 
+ADD email varchar(254);
+
+ALTER TABLE public.user
+ADD password varchar(250);
 
 CREATE TABLE public.recipeList (
   id SERIAL NOT NULL PRIMARY KEY,

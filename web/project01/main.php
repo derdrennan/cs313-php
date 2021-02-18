@@ -17,6 +17,14 @@
     function closeForm(formID) {
       document.getElementById(formID).style.display = "none";
     }
+
+    function verifyMatch(input) {
+      if (input.value != document.getElementById('password').value) {
+        input.setCustomValidity('Password must match.');
+      } else {
+        input.setCustomValidity('');
+      }
+    }
   </script>
 </head>
 
@@ -27,18 +35,43 @@
 
       <div class="topnav">
         <a href="../week02/assignmentLinks.html">Home</a>
-        <a class="open-button" onclick="openForm('myForm')">Add User</a>
+        <a class="open-button" onclick="openForm('login')">Log In</a>
+        <a class="open-button" onclick="openForm('signup')">Sign Up</a>
       </div>
 
-      <div class="form-popup" id="myForm">
+      <div class="form-popup" id="login">
+        <form action="insertUser.php" class="form-container" method="POST">
+          <h1>Log In</h1>
+
+          <label for="email"><b>E-mail</b></label>
+          <input type="email" id="email" placeholder="E-mail" name="email" required>
+
+          <label for="password"><b>Password</b></label>
+          <input type="password" id="password" placeholder="Password" name="password" minlength="6" required>
+
+          <button type="submit" class="btn">Submit</button>
+          <button type="button" class="btn cancel" onclick="closeForm('login')">Close</button>
+        </form>
+      </div>
+
+      <div class="form-popup" id="signup">
         <form action="insertUser.php" class="form-container" method="POST">
           <h1>Add New User</h1>
 
           <label for="username"><b>Username</b></label>
-          <input type="text" id="username" placeholder="Enter Name" name="username" required>
+          <input type="text" id="username" placeholder="This name will be visible to the public" name="username" required>
+
+          <label for="email"><b>E-mail</b></label>
+          <input type="email" id="email" placeholder="Enter Name" name="email" required>
+
+          <label for="password"><b>Password</b></label>
+          <input type="password" id="password" placeholder="Password" name="password" minlength="6" required>
+
+          <label for="vrfyPassword"><b>Verify Password</b></label>
+          <input type="password" id="vrfyPassword" placeholder="Verify Password" name="vrfyPassword" minlength="6" oninput="verifyMatch(this)" required>
 
           <button type="submit" class="btn">Submit</button>
-          <button type="button" class="btn cancel" onclick="closeForm('myForm')">Close</button>
+          <button type="button" class="btn cancel" onclick="closeForm('signup')">Close</button>
         </form>
       </div>
 
