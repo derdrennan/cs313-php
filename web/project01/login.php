@@ -5,8 +5,10 @@ require_once("../project01/dbFunctions.php");
 session_start();
 
 $badLogin = false;
+echo "On line 8";
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  //if (isset($_POST['email']) && isset($_POST['password'])) {
   $email = test_input($_POST['email']);
   $password = test_input($_POST['password']);
 
