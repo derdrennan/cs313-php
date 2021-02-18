@@ -43,8 +43,8 @@
         <form action="login.php" class="form-container" method="POST">
           <h1>Log In</h1>
 
-          <label for="email"><b>E-mail</b></label>
-          <input type="email" id="email" placeholder="E-mail" name="email" required>
+          <label for="emailLI"><b>E-mail</b></label>
+          <input type="email" id="emailLI" placeholder="E-mail" name="emailLI" required>
 
           <label for="passwordLI"><b>Password</b></label>
           <input type="password" id="passwordLI" placeholder="Password" name="passwordLI" minlength="6" required>

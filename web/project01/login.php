@@ -9,8 +9,8 @@ echo "On line 8";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   //if (isset($_POST['email']) && isset($_POST['password'])) {
-  $email = test_input($_POST['email']);
-  $password = test_input($_POST['password']);
+  $email = test_input($_POST['emailLI']);
+  $password = test_input($_POST['passwordLI']);
 
   $loginQuery = 'SELECT password FROM public.user WHERE email = :email';
   $loginArray = array(':email' => $email);
