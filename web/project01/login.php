@@ -20,9 +20,12 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
   $hashedPassword = basicQuery($loginQuery, $loginArray);
   $userID = basicQuery($getIDQuery, $getIDQuery);
+  echo $hashedPassword;
+  echo $userID;
 
   if (password_verify($password, $hashedPassword)) {
     //Correct. Put user ID in session variable. 
+    echo "inside passwordVerify statement";
     $_SESSION['userID'] = $userID;
     header("Location: ../project01/main.php");
     die();
