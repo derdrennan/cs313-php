@@ -48,14 +48,36 @@ function insert($query, $array)
     //echo "Error with DB. Details: $ex";
     die();
   }
-
-  //die();
   //Normally there would be die(); here, but I am doing two queries from the same form. There
   //was no way to do both, because die(); would end the process before it could cycle out
   //and come back in to run the second query. die(); will need to be added after any calls to insert();
 
-  //
   return $id;
+}
+
+function basicQuery($query, $array)
+{
+  $db = get_db();
+  try {
+    $statement = $db->prepare($query);
+
+    foreach ($array as $key => &$value) {
+      if (is_int($value)) {
+        $statement->bindValue($key, $value, PDO::PARAM_INT);
+      } else {
+        $statement->bindValue($key, $value, PDO::PARAM_STR);
+      }
+    }
+
+    $statement->execute();
+    $row = $statement->fetch();
+    $result = $row[$value];
+  } catch (Exception $ex) {
+    //echo "Error with DB. Details: $ex";
+    die();
+  }
+
+  return $result;
 }
 
 //Sanitization

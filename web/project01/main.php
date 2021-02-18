@@ -40,7 +40,7 @@
       </div>
 
       <div class="form-popup" id="login">
-        <form action="insertUser.php" class="form-container" method="POST">
+        <form action="login.php" class="form-container" method="POST">
           <h1>Log In</h1>
 
           <label for="email"><b>E-mail</b></label>
