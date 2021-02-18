@@ -19,7 +19,7 @@
     }
 
     function verifyMatch(input) {
-      if (input.value != document.getElementById('password').value) {
+      if (input.value != document.getElementById('passwordSU').value) {
         input.setCustomValidity('Password must match.');
       } else {
         input.setCustomValidity('');
@@ -46,8 +46,8 @@
           <label for="email"><b>E-mail</b></label>
           <input type="email" id="email" placeholder="E-mail" name="email" required>
 
-          <label for="password"><b>Password</b></label>
-          <input type="password" id="password" placeholder="Password" name="password" minlength="6" required>
+          <label for="passwordLI"><b>Password</b></label>
+          <input type="password" id="passwordLI" placeholder="Password" name="passwordLI" minlength="6" required>
 
           <button type="submit" class="btn">Submit</button>
           <button type="button" class="btn cancel" onclick="closeForm('login')">Close</button>
@@ -64,8 +64,8 @@
           <label for="email"><b>E-mail</b></label>
           <input type="email" id="email" placeholder="Enter Name" name="email" required>
 
-          <label for="password"><b>Password</b></label>
-          <input type="password" id="password" placeholder="Password" name="password" minlength="6" required>
+          <label for="passwordSU"><b>Password</b></label>
+          <input type="password" id="passwordSU" placeholder="Password" name="passwordSU" minlength="6" required>
 
           <label for="vrfyPassword"><b>Verify Password</b></label>
           <input type="password" id="vrfyPassword" placeholder="Verify Password" name="vrfyPassword" minlength="6" oninput="verifyMatch(this)" required>

@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   //Adding the title
   $usernameQuery = 'INSERT INTO public.user(username, email, password) VALUES(:username, :email, :password)';
-  $usernameArray = array(':username' => $username, ':email' => $email, 'password' => $hashedPassword);
+  $usernameArray = array(':username' => $username, ':email' => $email, ':password' => $hashedPassword);
 
   insert($usernameQuery, $usernameArray);
 
