@@ -11,8 +11,10 @@ $fakePassword = "truvoodoo";
 $fakeHash = password_hash($fakePassword, PASSWORD_DEFAULT);
 
 echo "testing fake password: <br>";
-echo password_verify($fakePassword . "fake", $fakeHash);
+echo password_verify($fakePassword, $fakeHash);
 echo "<br>";
+echo gettype($fakePassword);
+echo gettype($fakeHash);
 
 //Validate the request method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -38,8 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $userID = $row['id'];
 
   //For debugging
-  echo "Hash: " . $hashedPassword . "<br>";
-  echo "Password: " . $password . "<br>";
+  echo "Hash: " . $hashedPassword . " type: " . gettype($hashedPassword) . "<br>";
+  echo "Password: " . $password . " type: " . gettype($password) . "<br>";
   echo "UserID: " . $userID . "<br>";
   echo "Verify Password: ";
   if (password_verify($password, $hashedPassword)) {
