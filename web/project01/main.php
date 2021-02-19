@@ -15,8 +15,7 @@
     }
 
     function closeForm(formID) {
-      // document.getElementById(formID).style.display = "none";
-      document.getElementById(formID);
+      document.getElementById(formID).style.display = "none";
     }
 
     function verifyMatch(input) {
@@ -40,7 +39,7 @@
         <a class="open-button" onclick="openForm('signup')">Sign Up</a>
       </div>
 
-      <div class="form-popup" id="login" onblur="closeForm('login')">
+      <div class="form-popup" id="login">
         <form action="login.php" class="form-container" method="POST">
           <h1>Log In</h1>
 
@@ -51,7 +50,7 @@
           <input type="password" id="passwordLI" placeholder="Password" name="passwordLI" minlength="6" required>
 
           <button type="submit" class="btn">Submit</button>
-          <!-- <button type="button" class="btn cancel" onclick="closeForm('login')">Close</button> -->
+          <button type="button" class="btn cancel" onclick="closeForm('login')">Close</button>
         </form>
       </div>
 

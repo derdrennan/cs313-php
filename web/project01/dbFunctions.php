@@ -58,6 +58,7 @@ function insert($query, $array)
 function basicQuery($query, $array)
 {
   $db = get_db();
+
   try {
     $statement = $db->prepare($query);
 

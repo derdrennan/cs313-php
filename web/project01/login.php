@@ -7,10 +7,14 @@ session_start();
 $badLogin = false;
 echo "On line 8";
 
+//Validate the request method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  //if (isset($_POST['email']) && isset($_POST['password'])) {
+
+  // Values for queries
   $email = test_input($_POST['emailLI']);
   $password = test_input($_POST['passwordLI']);
+  echo "E-mail: " . $hashedPassword;
+  echo "UserID: " . $userID;
 
   $loginQuery = 'SELECT password FROM public.user WHERE email = :email';
   $loginArray = array(':email' => $email);
