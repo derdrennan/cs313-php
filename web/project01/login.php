@@ -7,6 +7,12 @@ session_start();
 $badLogin = false;
 echo "On line 8\n";
 
+$fakePassword = "truvoodoo";
+$fakeHash = password_hash($fakePassword, PASSWORD_DEFAULT);
+
+echo "testing fake password: \n";
+echo password_verify($fakePassword, $fakeHash);
+
 //Validate the request method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
