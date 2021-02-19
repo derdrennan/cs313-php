@@ -7,11 +7,12 @@ session_start();
 $badLogin = false;
 echo "On line 8<br>";
 
-//$fakePassword = "truvoodoo";
-//$fakeHash = password_hash($fakePassword, PASSWORD_DEFAULT);
+$fakePassword = "truvoodoo";
+$fakeHash = password_hash($fakePassword, PASSWORD_DEFAULT);
 
-//echo "testing fake password: <br>";
-//echo password_verify($fakePassword, $fakeHash);
+echo "testing fake password: <br>";
+echo password_verify($fakePassword, $fakeHash);
+echo "<br>";
 
 //Validate the request method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -41,7 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   echo "Password: " . $password . "<br>";
   echo "UserID: " . $userID . "<br>";
   echo "Verify Password: ";
-  echo password_verify($password, $hashedPassword) . "<br>";
+  if (password_verify($password, $hashedPassword)) {
+    echo 'Password is valid!';
+  } else {
+    echo 'Invalid password.';
+  }
 
   //Password_verify is safe against timing attacks. 
   if (password_verify($password, $hashedPassword)) {
