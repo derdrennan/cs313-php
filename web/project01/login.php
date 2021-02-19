@@ -21,10 +21,8 @@ echo "<br>";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Values for queries
-  // $email = test_input($_POST['emailLI']);
-  // $password = test_input($_POST['passwordLI']);
-  $email = $_POST['emailLI'];
-  $password = $_POST['passwordLI'];
+  $email = test_input($_POST['emailLI']);
+  $password = test_input($_POST['passwordLI']);
 
   //For debugging
   echo "E-mail: " . $email . "<br>";

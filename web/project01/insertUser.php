@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Values for queries
   $username = test_input($_POST['username']);
   $email = test_input($_POST['email']);
-  $password = test_input($_POST['password']);
+  $password = test_input($_POST['passwordSU']);
 
   $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
   echo "hashed password: ";
