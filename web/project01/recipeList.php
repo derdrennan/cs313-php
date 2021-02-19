@@ -13,11 +13,9 @@ session_start();
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bubblegum+Sans" />
   <?php include('../project01/dbFunctions.php') ?>
   <script>
-    function validateUser() {
+    function validateUser($userID) {
       //Is User logged in?
       <?php
-      $userID = $_GET['user'];
-
       if ($_SESSION['userID'] != $userID) {
         //Redirect to current page instead of letting them go to recipe form
         header("Location: ../project01/recipeList.php?user=$userID");
@@ -40,15 +38,16 @@ session_start();
       <a href="../week02/assignmentLinks.html">Home</a>
       <a href="../project01/main.php">List of Users</a>
       <?php
-      $userID = $_GET['user']; ?>
-      <a onclick="validateUser()">+Add Recipe</a>
+      $userID = $_GET['user'];
+      ?>
+      <a onclick="validateUser($userID)">+Add Recipe</a>
     </div>
 
     <!-- Getting the user name -->
     <h1 id="header-1">
       <?php
       $db = get_db();
-      $userID = $_GET['user'];
+      //$userID = $_GET['user'];
       $statement =  $db->prepare('SELECT username
         FROM public.user
         WHERE id = :id');
