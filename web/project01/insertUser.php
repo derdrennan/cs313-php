@@ -13,7 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
   echo "hashed password: ";
   echo $hashedPassword;
-
+  echo "<br>";
+  echo password_verify($password, $hashedPassword);
   //Adding the title
   $usernameQuery = 'INSERT INTO public.user(username, email, password) VALUES(:username, :email, :password)';
   $usernameArray = array(':username' => $username, ':email' => $email, ':password' => $hashedPassword);
