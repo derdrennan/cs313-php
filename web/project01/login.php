@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $password = test_input($_POST['passwordLI']);
   echo "E-mail: " . $hashedPassword;
   echo "UserID: " . $userID;
+  echo "Post Data: " . print_r($_POST);
 
   $loginQuery = 'SELECT password FROM public.user WHERE email = :email';
   $loginArray = array(':email' => $email);
