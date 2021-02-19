@@ -22,15 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   echo "\n";
 
   //Get hashed password to compare to login password.
-  $loginQuery = 'SELECT password FROM public.user WHERE email = :email';
+  $loginQuery = 'SELECT password, id FROM public.user WHERE email = :email';
   $loginArray = array(':email' => $email);
 
-  //Get userID to store in a session variable
-  $getIDQuery = 'SELECT id FROM public.user WHERE email = :email';
-  $getIDArray = array(':id' => $id);
+  $row = basicQuery($loginQuery, $loginArray);
 
-  $hashedPassword = basicQuery($loginQuery, $loginArray)['password'];
-  $userID = basicQuery($getIDQuery, $getIDQuery)['id'];
+  $hashedPassword = $row['password'];
+  $userID = $row['id'];
 
   //For debugging
   echo "Hash: " . $hashedPassword . "\n";
