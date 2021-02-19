@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "inside passwordVerify statement";
     $_SESSION['userID'] = $userID;
     header("Location: ../project01/main.php");
-    die();
+    //die();
   } else {
     $badLogin = true;
     exit('Invalid Request');
