@@ -87,7 +87,7 @@ body {
 }
 
 /* Full-width input fields */
-.form-container input[type=text], .form-container input[type=password] {
+.form-container input[type=text], .form-container input[type=password], .form-container input[type=email]{
   width: 266px;
   padding: 16px 20px;
   margin-bottom: 10px;
@@ -98,7 +98,7 @@ body {
 }
 
 /* When the inputs get focus, do something */
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+.form-container input[type=text]:focus, .form-container input[type=password]:focus .form-container input[type=email]:focus {
   /* background-color: #ddd; */
   border: 1px;
   border-color: #EE1D23;
