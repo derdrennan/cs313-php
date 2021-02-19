@@ -72,7 +72,7 @@ function basicQuery($query, $array)
 
     $statement->execute();
     $row = $statement->fetch();
-    $result = $row[$value];
+    $result = $row['password'];
   } catch (Exception $ex) {
     //echo "Error with DB. Details: $ex";
     die();
