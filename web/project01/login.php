@@ -13,8 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Values for queries
   $email = test_input($_POST['emailLI']);
   $password = test_input($_POST['passwordLI']);
-  echo "E-mail: " . $hashedPassword;
-  echo "UserID: " . $userID;
+
+  //For debugging
+  echo "E-mail: " . $email;
+  echo "Password: " . $password;
   echo "Post Data: " . print_r($_POST);
 
   $loginQuery = 'SELECT password FROM public.user WHERE email = :email';
@@ -27,8 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $hashedPassword = basicQuery($loginQuery, $loginArray);
   $userID = basicQuery($getIDQuery, $getIDQuery);
+
+  //For debugging
   echo $hashedPassword;
-  echo $userID;
+  echo "UserID: " . $userID;
 
   if (password_verify($password, $hashedPassword)) {
     //Correct. Put user ID in session variable. 
