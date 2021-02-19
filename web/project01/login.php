@@ -11,7 +11,7 @@ $fakePassword = "truvoodoo";
 $fakeHash = password_hash($fakePassword, PASSWORD_DEFAULT);
 
 echo "testing fake password: <br>";
-echo password_verify($fakePassword, $fakeHash);
+echo password_verify($fakePassword . "fake", $fakeHash);
 echo "<br>";
 
 //Validate the request method
