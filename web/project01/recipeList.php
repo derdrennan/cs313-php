@@ -12,24 +12,6 @@ session_start();
   <link rel="stylesheet" type="text/css" href="../project01/styles.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bubblegum+Sans" />
   <?php include('../project01/dbFunctions.php') ?>
-  <script>
-    function validateUser($userID) {
-      //Is User logged in?
-      <?php
-      if ($_SESSION['userID'] != $userID) {
-        //Redirect to current page instead of letting them go to recipe form
-        header("Location: ../project01/recipeList.php?user=$userID");
-
-        //alert("Must be logged in and on your own user profile to add a recipe.")
-
-        die();
-      } else { ?>
-        href = "../project01/recipeForm.php?user=<?php echo $userID ?>"
-      <?php
-      }
-      ?>
-    }
-  </script>
 </head>
 
 <body>
@@ -39,9 +21,13 @@ session_start();
       <a href="../project01/main.php">List of Users</a>
       <?php
       $userID = $_GET['user'];
+      if ($_SESSION['userID'] == $userID) {
       ?>
-      <a class="open-button" onclick="validateUser($userID)">+Add Recipe</a>
-      <a><?php $_SESSION['userID'] ?></a>
+        <a href="../project01/recipeForm.php?user=<?php echo $userID ?>">+Add Recipe</a>
+      <?php
+      }
+      ?>
+
     </div>
 
     <!-- Getting the user name -->
