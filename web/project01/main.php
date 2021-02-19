@@ -39,8 +39,8 @@
         <a class="open-button" onclick="openForm('signup')">Sign Up</a>
       </div>
 
-      <div class="form-popup" id="login">
-        <form action="login.php" class="form-container" method="POST" onfocusout="closeForm('login')">
+      <div class="form-popup" id="login" onfocusout="closeForm('login')">
+        <form action="login.php" class="form-container" method="POST">
           <h1>Log In</h1>
 
           <label for="emailLI"><b>E-mail</b></label>
