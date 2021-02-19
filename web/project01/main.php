@@ -62,7 +62,7 @@
           <input type="text" id="username" placeholder="This name will be visible to the public" name="username" required>
 
           <label for="emailSU"><b>E-mail</b></label>
-          <input type="email" id="emailSU" placeholder="Enter Name" name="emaemailSUil" required>
+          <input type="email" id="emailSU" placeholder="Enter Name" name="emailSU" required>
 
           <label for="passwordSU"><b>Password</b></label>
           <input type="password" id="passwordSU" placeholder="Password" name="passwordSU" minlength="6" required>
