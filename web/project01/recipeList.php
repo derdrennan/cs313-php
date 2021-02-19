@@ -24,7 +24,7 @@ session_start();
       ?>
         alert("Must be logged in and on your own user profile to add a recipe.")
       <?php
-        exit();
+        die();
       } else { ?>
         href = "../project01/recipeForm.php?user=<?php echo $userID ?>"
       <?php
@@ -41,7 +41,7 @@ session_start();
       <a href="../project01/main.php">List of Users</a>
       <?php
       $userID = $_GET['user']; ?>
-      <a onclick="validateUser('login')">+Add Recipe</a>
+      <a onclick="validateUser()">+Add Recipe</a>
     </div>
 
     <!-- Getting the user name -->
