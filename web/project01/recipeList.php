@@ -19,9 +19,9 @@ session_start();
       if ($_SESSION['userID'] != $userID) {
         //Redirect to current page instead of letting them go to recipe form
         header("Location: ../project01/recipeList.php?user=$userID");
-      ?>
-        alert("Must be logged in and on your own user profile to add a recipe.")
-      <?php
+
+        //alert("Must be logged in and on your own user profile to add a recipe.")
+
         die();
       } else { ?>
         href = "../project01/recipeForm.php?user=<?php echo $userID ?>"
@@ -40,7 +40,8 @@ session_start();
       <?php
       $userID = $_GET['user'];
       ?>
-      <a onclick="validateUser($userID)">+Add Recipe</a>
+      <a class="open-button" onclick="validateUser($userID)">+Add Recipe</a>
+      <a><?php $_SESSION['userID'] ?></a>
     </div>
 
     <!-- Getting the user name -->

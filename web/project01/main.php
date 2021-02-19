@@ -37,6 +37,7 @@
         <a href="../week02/assignmentLinks.html">Home</a>
         <a class="open-button" onclick="openForm('login')">Log In</a>
         <a class="open-button" onclick="openForm('signup')">Sign Up</a>
+        <a><?php $_SESSION['userID'] ?></a>
       </div>
 
       <div class="form-popup" id="login">
