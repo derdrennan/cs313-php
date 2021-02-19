@@ -5,12 +5,12 @@ require_once("../project01/dbFunctions.php");
 session_start();
 
 $badLogin = false;
-echo "On line 8\n";
+echo "On line 8<br>";
 
 //$fakePassword = "truvoodoo";
 //$fakeHash = password_hash($fakePassword, PASSWORD_DEFAULT);
 
-//echo "testing fake password: \n";
+//echo "testing fake password: <br>";
 //echo password_verify($fakePassword, $fakeHash);
 
 //Validate the request method
@@ -21,11 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $password = test_input($_POST['passwordLI']);
 
   //For debugging
-  echo "E-mail: " . $email . "\n";
-  echo "Password: " . $password . "\n";
+  echo "E-mail: " . $email . "<br>";
+  echo "Password: " . $password . "<br>";
   echo "Post Data: ";
   print_r($_POST);
-  echo "\n";
+  echo "<br>";
 
   //Get hashed password to compare to login password.
   $loginQuery = 'SELECT password, id FROM public.user WHERE email = :email';
@@ -37,13 +37,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $userID = $row['id'];
 
   //For debugging
-  echo "Hash: " . $hashedPassword . "\n";
-  echo "Password: " . $password . "\n";
+  echo "Hash: " . $hashedPassword . "<br>";
+  echo "Password: " . $password . "<br>";
   echo "UserID: " . $userID;
+  echo "Verify Password: ";
+  echo password_verify($password, $hashedPassword);
 
   //Password_verify is safe against timing attacks. 
   if (password_verify($password, $hashedPassword)) {
-    echo "inside passwordVerify statement\n";
+    echo "inside passwordVerify statement<br>";
 
     //Put user ID in session variable. 
     $_SESSION['userID'] = $userID;
