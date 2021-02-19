@@ -11,6 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $password = test_input($_POST['password']);
 
   $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+  echo "hashed password: ";
+  echo $hashedPassword;
 
   //Adding the title
   $usernameQuery = 'INSERT INTO public.user(username, email, password) VALUES(:username, :email, :password)';
@@ -19,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   insert($usernameQuery, $usernameArray);
 
   //Take 
-  header("Location: ../project01/main.php");
+  //header("Location: ../project01/main.php");
 
   die();
 } else {
