@@ -45,11 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   echo "Password: " . $password . " type: " . gettype($password) . "<br>";
   echo "UserID: " . $userID . "<br>";
   echo "Verify Password: ";
-  if (password_verify($password, $hashedPassword)) {
-    echo 'Password is valid!';
-  } else {
-    echo 'Invalid password.';
-  }
 
   if (password_verify($password, $hashedPassword)) {
     echo "inside passwordVerify statement<br>";
