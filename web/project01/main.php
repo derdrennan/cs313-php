@@ -39,7 +39,7 @@
         <a class="open-button" onclick="openForm('signup')">Sign Up</a>
       </div>
 
-      <div class="form-popup" id="login" onfocusout="closeForm('login')">
+      <div class="form-popup" id="login" onblur="closeForm('login')">
         <form action="login.php" class="form-container" method="POST">
           <h1>Log In</h1>
 
