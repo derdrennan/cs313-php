@@ -40,7 +40,7 @@
       </div>
 
       <div class="form-popup" id="login">
-        <form action="login.php" class="form-container" method="POST">
+        <form action="login.php" class="form-container" method="POST" onfocusout="closeForm('login')">
           <h1>Log In</h1>
 
           <label for="emailLI"><b>E-mail</b></label>
@@ -50,7 +50,7 @@
           <input type="password" id="passwordLI" placeholder="Password" name="passwordLI" minlength="6" required>
 
           <button type="submit" class="btn">Submit</button>
-          <button type="button" class="btn cancel" onclick="closeForm('login')">Close</button>
+          <!-- <button type="button" class="btn cancel" onclick="closeForm('login')">Close</button> -->
         </form>
       </div>
 
