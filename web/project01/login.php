@@ -5,16 +5,17 @@ require_once("../project01/dbFunctions.php");
 session_start();
 
 $badLogin = false;
-echo "On line 8<br>";
 
-$fakePassword = "truvoodoo";
+$fakePassword = "Fakepassword";
 $fakeHash = password_hash($fakePassword, PASSWORD_DEFAULT);
 
-echo "testing fake password: <br>";
+echo "Testing fake password: <br>";
 echo password_verify($fakePassword, $fakeHash);
 echo "<br>";
 echo gettype($fakePassword);
+echo "<br>";
 echo gettype($fakeHash);
+echo "<br>";
 
 //Validate the request method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -50,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo 'Invalid password.';
   }
 
-  //Password_verify is safe against timing attacks. 
   if (password_verify($password, $hashedPassword)) {
     echo "inside passwordVerify statement<br>";
 
