@@ -61,8 +61,8 @@
           <label for="username"><b>Username</b></label>
           <input type="text" id="username" placeholder="This name will be visible to the public" name="username" required>
 
-          <label for="email"><b>E-mail</b></label>
-          <input type="email" id="email" placeholder="Enter Name" name="email" required>
+          <label for="emailSU"><b>E-mail</b></label>
+          <input type="email" id="emailSU" placeholder="Enter Name" name="emaemailSUil" required>
 
           <label for="passwordSU"><b>Password</b></label>
           <input type="password" id="passwordSU" placeholder="Password" name="passwordSU" minlength="6" required>
