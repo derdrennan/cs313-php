@@ -39,9 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   //For debugging
   echo "Hash: " . $hashedPassword . "<br>";
   echo "Password: " . $password . "<br>";
-  echo "UserID: " . $userID;
+  echo "UserID: " . $userID . "<br>";
   echo "Verify Password: ";
-  echo password_verify($password, $hashedPassword);
+  echo password_verify($password, $hashedPassword) . "<br>";
 
   //Password_verify is safe against timing attacks. 
   if (password_verify($password, $hashedPassword)) {
