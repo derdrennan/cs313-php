@@ -71,14 +71,11 @@ function basicQuery($query, $array)
     }
 
     $statement->execute();
-    $row = $statement->fetch();
-    $result = $row[$value];
+    return $statement->fetch();
   } catch (Exception $ex) {
     //echo "Error with DB. Details: $ex";
     die();
   }
-
-  return $result;
 }
 
 //Sanitization

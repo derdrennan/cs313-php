@@ -17,28 +17,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   //For debugging
   echo "E-mail: " . $email . "\n";
   echo "Password: " . $password . "\n";
-  echo "Post Data: " . print_r($_POST) . "\n";
+  echo "Post Data: ";
+  print_r($_POST);
+  echo "\n";
 
+  //Get hashed password to compare to login password.
   $loginQuery = 'SELECT password FROM public.user WHERE email = :email';
   $loginArray = array(':email' => $email);
 
-  //I want the user ID to be saved as a session variable to determine access to
-  //site functions
+  //Get userID to store in a session variable
   $getIDQuery = 'SELECT id FROM public.user WHERE email = :email';
   $getIDArray = array(':id' => $id);
 
-  $hashedPassword = basicQuery($loginQuery, $loginArray);
-  $userID = basicQuery($getIDQuery, $getIDQuery);
+  $hashedPassword = basicQuery($loginQuery, $loginArray)['password'];
+  $userID = basicQuery($getIDQuery, $getIDQuery)['id'];
 
   //For debugging
   echo "Hash: " . $hashedPassword . "\n";
   echo "UserID: " . $userID;
 
+  //Password_verify is safe against timing attacks. 
   if (password_verify($password, $hashedPassword)) {
-    //Correct. Put user ID in session variable. 
     echo "inside passwordVerify statement\n";
+
+    //Put user ID in session variable. 
     $_SESSION['userID'] = $userID;
     header("Location: ../project01/main.php");
+
     die();
   } else {
     $badLogin = true;
