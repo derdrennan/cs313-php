@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once("../project01/dbFunctions.php");
 
@@ -14,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
   //Make sure username and email are both unique
-  $checkIfExistsQuery = 'SELECT * FROM public.user WHERE username = :username, email = :email';
+  $checkIfExistsQuery = 'SELECT * FROM public.user WHERE username = :username or email = :email';
   $checkIfExistsArray = array(':username' => $username, ':email' => $email);
 
   $row = basicQuery($checkIfExistsQuery, $checkIfExistsArray);
@@ -23,11 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $emailFromDB = $row['email'];
 
   if ($nameFromDB == $username || $emailFromDB == $email) {
-?>
-    <script>
-      alert("Username or E-mail already exists");
-    </script>
-<?php
+    $_SESSION['entryExists'] = 'The username or e-mail already exists';
     header("Location: ../project01/main.php");
     die();
   } else {

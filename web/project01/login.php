@@ -1,8 +1,7 @@
 <?php
+session_start();
 
 require_once("../project01/dbFunctions.php");
-
-session_start();
 
 //Validate the request method
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -32,6 +32,15 @@ session_start();
 </head>
 
 <body>
+  <?php
+  if (isset($_SESSION['entryExists'])) { ?>
+    <script>
+      alert(<?php echo $_SESSION['entryExists'] ?>)
+    </script>
+  <?php
+    unset($_SESSION['entryExists']);
+  }
+  ?>
 
   <div id="page-container">
     <div id="content-wrap">
