@@ -15,19 +15,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
   //Make sure username and email are both unique
-  $checkIfExistsQuery = 'SELECT * FROM public.user WHERE username = :username or email = :email';
-  $checkIfExistsArray = array(':username' => $username, ':email' => $email);
+  //$checkIfExistsQuery = 'SELECT * FROM public.user WHERE username = :username or email = :email';
+  //$checkIfExistsArray = array(':username' => $username, ':email' => $email);
 
-  $row = basicQuery($checkIfExistsQuery, $checkIfExistsArray);
+  //$row = basicQuery($checkIfExistsQuery, $checkIfExistsArray);
 
-  $nameFromDB = $row['username'];
-  $emailFromDB = $row['email'];
+  //$nameFromDB = $row['username'];
+  //$emailFromDB = $row['email'];
 
-  if ($nameFromDB == $username || $emailFromDB == $email) {
-    $_SESSION['entryExists'] = 'The username or e-mail already exists';
-    header("Location: ../project01/main.php");
-    die();
-  } else {
+  //if ($nameFromDB == $username || $emailFromDB == $email) {
+    //$_SESSION['entryExists'] = 'The username or e-mail already exists';
+    //header("Location: ../project01/main.php");
+    //die();
+  //} else {
     //Creating the string + array for adding a new user
     $usernameQuery = 'INSERT INTO public.user(username, email, password) VALUES(:username, :email, :password)';
     $usernameArray = array(':username' => $username, ':email' => $email, ':password' => $hashedPassword);

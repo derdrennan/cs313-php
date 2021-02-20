@@ -77,7 +77,7 @@
         <div id="card-container">
           <section class="basic-grid">
             <div class="assignment-style">
-              <?php echo $url ?>
+              <a href="<?php echo $url ?>"><?php echo $url ?></a>
             </div>
           </section>
         </div>
