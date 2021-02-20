@@ -14,13 +14,13 @@ session_start();
   <?php include('../project01/dbFunctions.php') ?>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script>
-    function openForm(formID) {
-      document.getElementById(formID).style.display = "block";
-    }
+    // function openForm(formID) {
+    //   document.getElementById(formID).style.display = "block";
+    // }
 
-    function closeForm(formID) {
-      document.getElementById(formID).style.display = "none";
-    }
+    // function closeForm(formID) {
+    //   document.getElementById(formID).style.display = "none";
+    // }
 
     function verifyMatch(input) {
       if (input.value != document.getElementById('passwordSU').value) {
@@ -29,6 +29,13 @@ session_start();
         input.setCustomValidity('');
       }
     }
+
+    $(document).ready(function() {
+      // Show hide popover
+      $(".dropdown").click(function() {
+        $(this).find(".dropdown-menu").slideToggle("fast");
+      });
+    });
 
     $(document).on("click", function(event) {
       var $trigger = $(".form-popup");
