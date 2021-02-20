@@ -32,8 +32,8 @@ session_start();
 
     $(document).ready(function() {
       // Show hide popover
-      $(".dropdown").click(function() {
-        $(this).find(".dropdown-menu").slideToggle("fast");
+      $(".form-popup").click(function() {
+        $(this).find(".form-container").slideToggle("fast");
       });
     });
 
