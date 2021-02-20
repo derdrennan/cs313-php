@@ -8,8 +8,8 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Values for queries
-  $email = test_input($_POST['emailLI']);
-  $password = test_input($_POST['passwordLI']);
+  $email = sanitize_input($_POST['emailLI']);
+  $password = sanitize_input($_POST['passwordLI']);
 
   //Get hashed password to compare to login password.
   $loginQuery = 'SELECT password, id FROM public.user WHERE email = :email';

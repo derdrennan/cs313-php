@@ -6,19 +6,40 @@ require_once("../project01/dbFunctions.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Values for queries
-  $username = test_input($_POST['username']);
-  $email = test_input($_POST['emailSU']);
-  $password = test_input($_POST['passwordSU']);
+  $username = sanitize_input($_POST['username']);
+  $email = sanitize_input($_POST['emailSU']);
+  $password = sanitize_input($_POST['passwordSU']);
 
+  // Encrypting the password before it goes to the DB
   $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-  //Adding the title
+  //Make sure username and email are both unique
+  $checkIfExistsQuery = 'SELECT * FROM public.user WHERE username = :username, email = :email';
+  $checkIfExistsArray = array(':username' => $username, ':email' => $email);
+
+  $row = basicQuery($checkIfExistsQuery, $checkIfExistsArray);
+
+  $nameFromDB = $row['username'];
+  $emailFromDB = $row['email'];
+
+  if ($nameFromDB == $username || $emailFromDB == $email) {
+    //Redirect
+?>
+    <script>
+      alert("Username or E-mail already exists");
+    </script>
+<?php
+    header("Location: ../project01/main.php");
+    die();
+  }
+
+  //Creating the string + array for adding a new user
   $usernameQuery = 'INSERT INTO public.user(username, email, password) VALUES(:username, :email, :password)';
   $usernameArray = array(':username' => $username, ':email' => $email, ':password' => $hashedPassword);
 
   insert($usernameQuery, $usernameArray);
 
-  //Take 
+  //Redirect
   header("Location: ../project01/main.php");
 
   die();

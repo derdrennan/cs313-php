@@ -6,13 +6,13 @@ require_once("../project01/dbFunctions.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Values for queries
-  $recipeTitle = test_input($_POST['recipeTitle']);
-  $url = test_input($_POST['url']);
-  $category = test_input($_POST['category']);
-  $cookTime = test_input($_POST['cookTime']);
-  $difficulty = test_input($_POST['difficulty']);
-  $userComment = test_input($_POST['userComment']);
-  $userID = test_input($_POST['userID']);
+  $recipeTitle = sanitize_input($_POST['recipeTitle']);
+  $url = sanitize_input($_POST['url']);
+  $category = sanitize_input($_POST['category']);
+  $cookTime = sanitize_input($_POST['cookTime']);
+  $difficulty = sanitize_input($_POST['difficulty']);
+  $userComment = sanitize_input($_POST['userComment']);
+  $userID = sanitize_input($_POST['userID']);
 
   //Adding the title
   $recipeTitleQuery = 'INSERT INTO public.recipeList(recipeTitle, user_id) VALUES(:recipeTitle, :userID) RETURNING id';

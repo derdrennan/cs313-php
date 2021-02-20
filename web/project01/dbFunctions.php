@@ -78,8 +78,12 @@ function basicQuery($query, $array)
   }
 }
 
+function findIfExists(){
+  $db = get_db();
+}
+
 //Sanitization
-function test_input($data)
+function sanitize_input($data)
 {
   $data = trim($data);
   $data = stripslashes($data);
