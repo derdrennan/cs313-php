@@ -12,6 +12,7 @@ session_start();
   <link rel="stylesheet" type="text/css" href="../project01/styles.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Bubblegum+Sans" />
   <?php include('../project01/dbFunctions.php') ?>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script>
     function openForm(formID) {
       document.getElementById(formID).style.display = "block";
@@ -28,6 +29,13 @@ session_start();
         input.setCustomValidity('');
       }
     }
+
+    $(document).on("click", function(event) {
+      var $trigger = $(".form-popup");
+      if ($trigger !== event.target && !$trigger.has(event.target).length) {
+        $(".form-container").slideUp("fast");
+      }
+    });
   </script>
 </head>
 
@@ -88,17 +96,18 @@ session_start();
         </form>
       </div>
 
-      <h1 id="header-1">Family Recipe Sharing</h1><br>
+      <h1 id="header-1">Recipe Sharing</h1><br>
 
       <div id="wrapper">
         <div id="intro">
-          Welcome to my "Recipe Sharing" website! I live so far from family that I miss
-          not being able to have family over for dinner. One of my favorite things is
-          experiencing new meals and seeing what other people like to eat. This is a way
-          I set up for us to share our favorite recipes with each other so we can make them
+          Welcome to my "Recipe Sharing" website! I live far from family/friends and I miss
+          not being able to invite them over for dinner. One of my favorite things is
+          experiencing new meals and seeing what other people like to eat. This website is a way
+          for us to share our favorite recipes with each other so we can make them
           and bond through food, even if it's from different parts of the country.<br><br>
-          When this site is finished, you will be able to add yourself as a member, and then
-          add your favorite recipes.
+          While I have met the requirements for this page from a school perspective, I still
+          plan to develop it until it gets to a more complete point as I intend to use it and
+          invite family/friends to use it.
         </div><br>
 
         <div id="card-container">
