@@ -1,3 +1,16 @@
+<?php
+session_start();
+?>
+
+<?php
+$userID = $_GET['user'];
+if ($_SESSION['userID'] != $userID) {
+  header("Location: ../project01/recipeList.php?user$echo $userID");
+
+  die();
+}
+?>
+
 <!doctype html>
 
 <html lang="en">
