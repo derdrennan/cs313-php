@@ -24,23 +24,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   //$emailFromDB = $row['email'];
 
   //if ($nameFromDB == $username || $emailFromDB == $email) {
-    //$_SESSION['entryExists'] = 'The username or e-mail already exists';
-    //header("Location: ../project01/main.php");
-    //die();
+  //$_SESSION['entryExists'] = 'The username or e-mail already exists';
+  //header("Location: ../project01/main.php");
+  //die();
   //} else {
-    //Creating the string + array for adding a new user
-    $usernameQuery = 'INSERT INTO public.user(username, email, password) VALUES(:username, :email, :password)';
-    $usernameArray = array(':username' => $username, ':email' => $email, ':password' => $hashedPassword);
+  //Creating the string + array for adding a new user
+  $usernameQuery = 'INSERT INTO public.user(username, email, password) VALUES(:username, :email, :password)';
+  $usernameArray = array(':username' => $username, ':email' => $email, ':password' => $hashedPassword);
 
-    $userID = insert($usernameQuery, $usernameArray);
+  $userID = insert($usernameQuery, $usernameArray);
 
-    $_SESSION['userID'] = $userID;
+  $_SESSION['userID'] = $userID;
 
-    //Redirect
-    header("Location: ../project01/main.php");
+  //Redirect
+  header("Location: ../project01/main.php");
 
-    die();
-  }
+  die();
 } else {
 
   exit('Invalid Request');
