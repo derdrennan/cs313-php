@@ -32,7 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $usernameQuery = 'INSERT INTO public.user(username, email, password) VALUES(:username, :email, :password)';
     $usernameArray = array(':username' => $username, ':email' => $email, ':password' => $hashedPassword);
 
-    insert($usernameQuery, $usernameArray);
+    $userID = insert($usernameQuery, $usernameArray);
+
+    $_SESSION['userID'] = $userID;
 
     //Redirect
     header("Location: ../project01/main.php");
